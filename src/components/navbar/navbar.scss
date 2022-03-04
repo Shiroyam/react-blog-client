@@ -1,0 +1,57 @@
+.navbar {
+  height: 100px;
+  width: 100%;
+  background-color: #161b22;
+
+  .navbar__content {
+    display: flex;
+    justify-content: space-between;
+
+    .paper {
+      margin-top: 25px;
+      width: 300px;
+      height: 50px;
+    }
+    .create {
+      .createIcon {
+        margin-top: 25px;
+        margin-right: 25px;
+        color: white;
+      }
+    }
+    .person {
+      .personIcon {
+        margin-right: 25px;
+        color: white;
+      }
+    }
+
+    .createIcon:hover {
+      width: 30px;
+      height: 30px;
+      border-radius: 10px;
+      background-color: #4c5251;
+      opacity: 0.9;
+    }
+
+    .personIcon:hover {
+      width: 30px;
+      height: 30px;
+      border-radius: 10px;
+      background-color: #4c5251;
+      opacity: 0.9;
+    }
+
+    .micro {
+      width: 50px;
+      height: 50px;
+      margin-bottom: 60px;
+      margin-left: 50px;
+      margin-right: -20px;
+    }
+    .logo {
+      width: 140px;
+      height: 140px;
+    }
+  }
+}
