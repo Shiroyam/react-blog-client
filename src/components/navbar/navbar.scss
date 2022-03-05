@@ -9,37 +9,36 @@
 
     .paper {
       margin-top: 25px;
-      width: 300px;
+      width: 400px;
       height: 50px;
     }
-    .create {
-      .createIcon {
-        margin-top: 25px;
-        margin-right: 25px;
-        color: white;
-      }
-    }
-    .person {
-      .personIcon {
-        margin-right: 25px;
-        color: white;
+
+    .createIcon {
+      margin-top: 25px;
+      margin-right: 25px;
+      color: white;
+      cursor: pointer;
+      &:hover {
+        width: 30px;
+        height: 30px;
+        border-radius: 10px;
+        background-color: #4c5251;
+        opacity: 0.9;
       }
     }
 
-    .createIcon:hover {
-      width: 30px;
-      height: 30px;
-      border-radius: 10px;
-      background-color: #4c5251;
-      opacity: 0.9;
-    }
-
-    .personIcon:hover {
-      width: 30px;
-      height: 30px;
-      border-radius: 10px;
-      background-color: #4c5251;
-      opacity: 0.9;
+    .personIcon {
+      margin-top: 25px;
+      margin-right: 25px;
+      color: white;
+      cursor: pointer;
+      &:hover {
+        width: 30px;
+        height: 30px;
+        border-radius: 10px;
+        background-color: #4c5251;
+        opacity: 0.9;
+      }
     }
 
     .micro {

@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
+.modal {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .modal__content {
+    padding: 20px;
+    border-radius: 12px;
+    background-color: #161b22;
+    height: 300 px;
+    width: 300px;
+    .modal__headerblock {
+      display: flex;
+      justify-content: space-between;
+      .closeIcon {
+        color: white;
+        cursor: pointer;
+        &:hover {
+          width: 30px;
+          height: 30px;
+          border-radius: 10px;
+          background-color: #4c5251;
+          opacity: 0.9;
+        }
+      }
+      .modal__header {
+        font-family: Roboto;
+        font-weight: 900;
+        color: white;
+      }
+    }
+    .select {
+      padding-top: 50px;
+      .login {
+        width: 260px;
+        padding-left: 8px;
+      }
+      .btn {
+        background-color: #000;
+        color: white;
+        width: 260px;
+        margin-left: 8px;
+        margin-top: 5px;
+      }
+    }
+    .modal__regLink {
+      font-family: Roboto;
+      font-size: 12px;
+      color: white;
+      float: right;
+      padding-top: 2px;
+      padding-right: 32px;
+      cursor: pointer;
+      &:hover {
+        color: blue;
+      }
+    }
+  }
+}

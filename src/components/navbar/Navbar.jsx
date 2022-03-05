@@ -9,7 +9,6 @@ import InputBase from "@mui/material/InputBase";
 import IconButton from "@mui/material/IconButton";
 import SearchIcon from "@mui/icons-material/Search";
 
-
 const Navbar = () => {
   return (
     <>
@@ -39,12 +38,8 @@ const Navbar = () => {
             </IconButton>
           </Paper>
           <div className="icon">
-            <div className="create">
-              <CreateIcon className="createIcon"></CreateIcon>
-            </div>
-            <div className="person">
-              <PersonIcon className="personIcon"></PersonIcon>
-            </div>
+          <CreateIcon className="createIcon"></CreateIcon>
+            <PersonIcon className="personIcon"></PersonIcon>
           </div>
         </div>
       </div>
