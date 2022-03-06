@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
+.mainPage {
+  color: white;
+  font-family: Roboto;
+  margin-top: 110px;
+  margin-left: 72px;
+  .headerBlock {
+    &__header {
+      font-size: 50px;
+      line-height: 52px;
+      font-style: normal;
+      font-weight: 800;
+    }
+
+    &__discription {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 25px;
+      line-height: 52px;
+      color: #aaaaaa;
+    }
+  }
+
+  .text {
+    width: 584px;
+    &__header {
+      font-style: normal;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 52px;
+    }
+
+    &__content {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 15px;
+    }
+  }
+}

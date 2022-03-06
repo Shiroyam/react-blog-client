@@ -10,6 +10,7 @@ import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import Button from "@mui/material/Button";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import CloseIcon from "@mui/icons-material/Close";
+
 const Modal = () => {
   const [close, setClose] = React.useState(true);
   const [values, setValues] = React.useState({
@@ -48,7 +49,7 @@ const Modal = () => {
             </div>
             <div className="select">
               <FormControl variant="standard" className="login">
-                <InputLabel htmlFor="input-with-icon-adornment">
+                <InputLabel className="modal__textLogin" htmlFor="input-with-icon-adornment">
                   Введите логин
                 </InputLabel>
                 <Input
@@ -61,7 +62,7 @@ const Modal = () => {
                 />
               </FormControl>
               <FormControl sx={{ m: 1, width: "26ch" }} variant="standard">
-                <InputLabel htmlFor="standard-adornment-password">
+                <InputLabel  className="modal__textPassword" htmlFor="standard-adornment-password">
                   Пароль
                 </InputLabel>
                 <Input

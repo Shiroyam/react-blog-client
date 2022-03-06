@@ -40,6 +40,12 @@
       .login {
         width: 260px;
         padding-left: 8px;
+        .modal__textLogin {
+          color: white;
+        }
+      }
+      .modal__textPassword {
+        color: white;
       }
       .btn {
         background-color: #000;
