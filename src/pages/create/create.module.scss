@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap");
+.create {
+  width: 602px;
+  padding-top: 68px;
+  padding-left: 58px;
+  .header {
+    &__input {
+      width: 576px;
+      height: 52px;
+      color: red;
+      font-family: Inter;
+      font-style: normal;
+      font-weight: 800;
+      font-size: 42px;
+      line-height: 52px;
+      color: #d7d7d7;
+      border: none;
+      outline: none;
+    }
+  }
+
+  .description {
+    margin-top: 25px;
+    &__header {
+      font-family: Inter;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 24px;
+      color: #0a3465;
+      padding-bottom: 5px;
+    }
+    &__input {
+      width: 602px;
+      height: 90px;
+      border: 1px solid #eceef1;
+      box-sizing: border-box;
+      border-radius: 10px;
+      outline: none;
+      padding-left: 5px;
+      padding-right: 5px;
+
+      font-family: Inter;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 28px;
+      color: #000000;
+
+      resize: none;
+    }
+  }
+
+  .formLink {
+    margin-top: 30px;
+    &__header {
+      font-family: Inter;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 24px;
+      color: #0a3465;
+      padding-bottom: 7px;
+    }
+    &__form {
+      width: 442px;
+      height: 45px;
+
+      outline: none;
+      background: #ffffff;
+      border: 1px solid #eceef1;
+      box-sizing: border-box;
+      border-radius: 10px;
+      padding-left: 5px;
+      padding-right: 5px;
+
+      font-family: Inter;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 28px;
+      color: #000000;
+    }
+
+    &__button {
+      width: 145px;
+      height: 45px;
+      margin-left: 15px;
+      background: #6fcf97;
+      border-radius: 12px;
+
+      font-family: Inter;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 19px;
+      text-align: center;
+      color: #ffffff;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.6;
+      }
+    }
+    &__icon {
+      padding-right: 9px;
+    }
+  }
+  .textForm {
+    margin-top: 30px;
+    width: 602px;
+    &__header {
+      font-family: Inter;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 24px;
+      color: #0a3465;
+      padding-bottom: 9px;
+    }
+  }
+  .btnPost {
+    float: right;
+    margin-top: 26px;
+    width: 160px;
+    height: 45px;
+    background: #ffdf36;
+    border-radius: 12px;
+
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #68572d;
+    cursor: pointer;
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+}
