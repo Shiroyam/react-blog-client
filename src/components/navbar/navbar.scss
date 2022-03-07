@@ -1,58 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap");
 .navbar {
-  top: 0;
-  position: fixed;
-  height: 100px;
-  width: 100%;
-  background-color: #161b22;
-
-  .navbar__content {
+  float: right;
+  width: 619px;
+  height: 67px;
+  border-bottom: 1px solid #f9f9f9;
+  border-left: 1px solid #f9f9f9;
+  &__content {
     display: flex;
     justify-content: space-between;
-
-    .paper {
-      margin-top: 25px;
-      width: 400px;
-      height: 50px;
+    padding-top: 21px;
+    .navbar__header {
+      padding-left: 29px;
+      font-family: Inter;
+      font-style: normal;
+      font-weight: 800;
+      font-size: 16px;
+      line-height: 24px;
+      color: #0a3465;
     }
-
-    .createIcon {
-      margin-top: 25px;
-      margin-right: 25px;
-      color: white;
-      cursor: pointer;
-      &:hover {
-        width: 30px;
-        height: 30px;
-        border-radius: 10px;
-        background-color: #4c5251;
-        opacity: 0.9;
+    .menu__icon {
+      padding-right: 29px;
+      .menu__searchIcon {
+        cursor: pointer;
+        padding-right: 26px;
+        &:hover {
+          opacity: 0.5;
+        }
       }
-    }
-
-    .personIcon {
-      margin-top: 25px;
-      margin-right: 25px;
-      color: white;
-      cursor: pointer;
-      &:hover {
-        width: 30px;
-        height: 30px;
-        border-radius: 10px;
-        background-color: #4c5251;
-        opacity: 0.9;
+      .menu__userIcon {
+        cursor: pointer;
+        &:hover {
+          opacity: 0.5;
+        }
       }
-    }
-
-    .micro {
-      width: 50px;
-      height: 50px;
-      margin-bottom: 60px;
-      margin-left: 50px;
-      margin-right: -20px;
-    }
-    .logo {
-      width: 140px;
-      height: 140px;
     }
   }
 }

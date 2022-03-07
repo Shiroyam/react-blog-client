@@ -1,13 +1,11 @@
-import Navbar from "./components/navbar/Navbar.jsx";
-import Modal from "./components/modal/Modal.jsx";
-import Start from "./components/startPage/Start.jsx"
+import Menu from "./components/menu/Menu.jsx"
+import Navbar from "./components/navbar/Navbar.jsx"
 
 function App() {
   return (
     <>
+    <Menu></Menu>
     <Navbar></Navbar>
-    <Start></Start>
-    <Modal></Modal>
     </>
   );
 }

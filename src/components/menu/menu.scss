@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap");
+.menu {
+  width: 100px;
+  height: 100vh;
+  top: 0px;
+  background: #13315e;
+  float: right;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+
+  &__content {
+    display: block;
+    padding-bottom: 47px;
+    .menu__icon {
+      width: 20px;
+      height: 16px;
+      cursor: pointer;
+      margin-left: 20px;
+    }
+    .menu__header {
+      font-family: Inter;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 17px;
+      line-height: 24px;
+      transform: rotate(-90deg);
+      letter-spacing: 0.12em;
+      color: #ffffff;
+      margin-bottom: 30px;
+    }
+  }
+}
