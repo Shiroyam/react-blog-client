@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap");
+.authorization {
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__modal {
+    width: 446px;
+    height: 475px;
+    background: #ffffff;
+    border-radius: 12px;
+    .authorization__inputName {
+      margin-top: 36px;
+      margin-left: 40px;
+      .authorization__header {
+        font-family: Inter;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 13px;
+        line-height: 100%;
+        color: #373737;
+        padding-bottom: 8px;
+      }
+      .authorization__input {
+        width: 366px;
+        height: 48px;
+        border: 1px solid #eeeeee;
+        box-sizing: border-box;
+        border-radius: 12px;
+        outline: none;
+        padding-left: 5px;
+      }
+    }
+    .authorization__inputPassword {
+      margin-top: 36px;
+      margin-left: 40px;
+      .authorization__header {
+        font-family: Inter;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 13px;
+        line-height: 100%;
+        color: #373737;
+        padding-bottom: 8px;
+      }
+      .authorization__input {
+        width: 366px;
+        height: 48px;
+        border: 1px solid #eeeeee;
+        box-sizing: border-box;
+        border-radius: 12px;
+        outline: none;
+        padding-left: 5px;
+      }
+    }
+    .authorization__headerContent {
+      padding-left: 40px;
+      padding-right: 40px;
+      padding-top: 30px;
+      display: flex;
+      justify-content: space-between;
+      .authorization__header {
+        font-family: Inter;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 26px;
+        line-height: 110%;
+        letter-spacing: -0.5px;
+      }
+      .authorization__iconClose {
+        width: 16px;
+        height: 16px;
+        cursor: pointer;
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+    }
+    .btn {
+      margin-top: 36px;
+      margin-left: 40px;
+      width: 366px;
+      height: 49px;
+      left: 537px;
+      top: 697px;
+      background: #ffdf36;
+      border-radius: 12px;
+
+      font-family: Inter;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 19px;
+      text-align: center;
+      color: #68572d;
+      cursor: pointer;
+    }
+  }
+}
