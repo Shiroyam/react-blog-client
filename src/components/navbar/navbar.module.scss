@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=Nunito:wght@800&display=swap");
+.navbar {
+  float: right;
+  &__content {
+    width: 619px;
+    height: 46px;
+    border-bottom: 1px solid #f9f9f9;
+    border-left: 1px solid #f9f9f9;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 21px;
+    .navbar__header {
+      padding-left: 29px;
+      font-family: Inter;
+      font-style: normal;
+      font-weight: 800;
+      font-size: 16px;
+      line-height: 24px;
+      color: #0a3465;
+    }
+    .menu__icon {
+      padding-right: 29px;
+      .menu__searchIcon {
+        cursor: pointer;
+        padding-right: 26px;
+        &:hover {
+          opacity: 0.5;
+        }
+      }
+      .menu__userIcon {
+        cursor: pointer;
+        &:hover {
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+  .article {
+    border-bottom: 1px solid #f9f9f9;
+    border-left: 1px solid #f9f9f9;
+    padding-left: 30px;
+    width: 630px;
+    height: 210px;
+    &__content {
+      display: flex;
+      justify-content: space-between;
+      .article__textContent {
+        .article__header {
+          padding-top: 20px;
+          font-family: Nunito;
+          font-style: normal;
+          font-weight: 800;
+          font-size: 20px;
+          line-height: 30px;
+          color: #080b0e;
+        }
+        .article__discription {
+          padding-top: 2px;
+
+          font-family: Inter;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 13px;
+          line-height: 24px;
+          color: #898c90;
+        }
+        .article__date {
+          padding-top: 18px;
+          font-family: Inter;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 15px;
+          line-height: 24px;
+          color: #898c90;
+        }
+      }
+      .article__imgContent {
+        .article__img {
+          padding-top: 30px;
+          padding-left: 40px;
+          padding-right: 20px;
+          border-radius: 10px;
+          width: 130px;
+          height: 130px;
+        }
+      }
+    }
+  }
+}
