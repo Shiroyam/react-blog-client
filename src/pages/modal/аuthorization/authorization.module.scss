@@ -11,7 +11,7 @@
   align-items: center;
   &__modal {
     width: 446px;
-    height: 475px;
+    height: 400px;
     background: #ffffff;
     border-radius: 12px;
     .authorization__inputName {
@@ -99,6 +99,9 @@
       text-align: center;
       color: #68572d;
       cursor: pointer;
+      &:hover {
+        opacity: 0.7;
+      }
     }
   }
 }

@@ -1,11 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap");
 .create {
   width: 602px;
-  padding-top: 68px;
-  padding-left: 58px;
+  padding-top: 100px;
+  padding-left: 220px;
   .header {
     &__input {
-      width: 576px;
+      width: 602px;
       height: 52px;
       color: red;
       font-family: Inter;
@@ -109,6 +109,7 @@
   .textForm {
     margin-top: 30px;
     width: 602px;
+
     &__header {
       font-family: Inter;
       font-style: normal;

@@ -1,10 +1,12 @@
 import { applyMiddleware, combineReducers, compose, createStore } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import thunk from "redux-thunk";
-import userReducer from './reducers/userReducer'
+import {regReducer} from './regModal/reducer'
+import { searchReducer } from "./search/reducer";
 
 const rootReducer = combineReducers({
-    user: userReducer,
+  reg:regReducer,
+  search:searchReducer
 });
 
 export const store = createStore(

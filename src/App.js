@@ -5,30 +5,32 @@ import Main from "./pages/main/Main.jsx";
 import Create from "./pages/create/Create.jsx";
 import Registration from "./pages/modal/registration/Registration.jsx";
 import Authorization from "./pages/modal/аuthorization/Authorization.jsx";
-
+import axios from "axios";
+import { useSelector } from "react-redux";
 import { instance } from "./config/axios";
 
-async function post() {
-  // .post("http://localhost:5656/auth/register", {
-  //     "fullName": "Dima Pypkin",
-  //     "email": "wdawdwadaD@dawdawdaw.ru",
-  //     "password": "123456789"
-  // })
-  // await axios.get(`http://localhost:5656/users`);
-  // await axios.get(`http://localhost:5656/posts`);
-  //   await axios.post(
-  //     `http://localhost:5656/posts`,
-  //     {
-  //       title: "Заголовок статьи",
-  //       text: "........",
-  //     },
-  //     {
-  //       headers: {
-  //         Authorization: localStorage.getItem("token"),
-  //       },
-  //     }
-  //   );
-}
+// async function post() {
+//   instance
+//   .post("http://localhost:5656/auth/register", {
+//       "fullName": "Dima Pypkin",
+//       "email": "wdawdwadaD@dawdawdaw.ru",
+//       "password": "123456789"
+//   })
+//   await axios.get(`http://localhost:5656/users`);
+//   await axios.get(`http://localhost:5656/posts`);
+//     await axios.post(
+//       `http://localhost:5656/posts`,
+//       {
+//         title: "Заголовок статьи",
+//         text: "........",
+//       },
+//       {
+//         headers: {
+//           Authorization: localStorage.getItem("token"),
+//         },
+//       }
+//     );
+// }
 
 function App() {
   async function reg() {
@@ -57,23 +59,21 @@ function App() {
         title: "Amet molestie tincidunt id nascetur sit purus turpis",
         text: "........",
         description:"Vel vulputate mauris enim habitant ornare. Ut in sit purus turpis ultrices suspendisse scelerisque quam lorem. Amet molestie nascetur...",
-        photoUrl:"https://i.ibb.co/dQWNtRN/post1Png.jpg"
+        photoUrl:"..."
       });
     } catch (error) {
       console.log(error);
     }
   }
-
+  const flag = useSelector((state) => state.reg.flag);
   return (
     <>
-      {/* <div>
-        <button onClick={() => reg()}>РЕГ</button>
-        <button onClick={() => prov()}>ПРОВ</button>
-        <button onClick={() => create()}>СОЗ</button>
-      </div> */}
       <Menu></Menu>
       <Navbar></Navbar>
       <Main></Main>
+      {/* <Create></Create> */}
+      
+      { flag && <Authorization></Authorization>}
     </>
   );
 }

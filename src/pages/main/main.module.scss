@@ -1,14 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap");
 .main {
-  padding-top: 10px;
-  padding-left: 68px;
+  padding-top: 70px;
+  padding-left: 220px;
+  width: 1037px;
 
   &__headerContent {
     .main__header {
       font-family: Inter;
       font-style: normal;
       font-weight: 800;
-      font-size: 50px;
+      font-size: 72px;
       line-height: 52px;
       padding-bottom: 15px;
     }
@@ -16,7 +17,7 @@
       font-family: Inter;
       font-style: normal;
       font-weight: 500;
-      font-size: 30px;
+      font-size: 34px;
       line-height: 52px;
       color: #aaaaaa;
       margin-bottom: 23px;

@@ -2,14 +2,14 @@
 .navbar {
   float: right;
   &__content {
-    width: 619px;
-    height: 46px;
+    width: 780px;
+    height: 67px;
     border-bottom: 1px solid #f9f9f9;
     border-left: 1px solid #f9f9f9;
     display: flex;
     justify-content: space-between;
-    padding-top: 21px;
     .navbar__header {
+      padding-top: 21px;
       padding-left: 29px;
       font-family: Inter;
       font-style: normal;
@@ -20,7 +20,30 @@
     }
     .menu__icon {
       padding-right: 29px;
+      .menu__searchClose {
+        margin-left: 700px;
+        margin-top: 25px;
+        cursor: pointer;
+        position: relative;
+      }
+      .menu__searchInput {
+        position: absolute;
+        outline: none;
+        padding-left: 29px;
+        padding-right: 100px;
+        background: #f9fafd;
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        color: #798fa8;
+
+        width: 650px;
+        height: 67px;
+      }
       .menu__searchIcon {
+        padding-top: 21px;
         cursor: pointer;
         padding-right: 26px;
         &:hover {
@@ -28,6 +51,7 @@
         }
       }
       .menu__userIcon {
+        padding-top: 21px;
         cursor: pointer;
         &:hover {
           opacity: 0.5;
@@ -39,7 +63,7 @@
     border-bottom: 1px solid #f9f9f9;
     border-left: 1px solid #f9f9f9;
     padding-left: 30px;
-    width: 630px;
+    width: 750px;
     height: 210px;
     &__content {
       display: flex;
@@ -56,7 +80,7 @@
         }
         .article__discription {
           padding-top: 2px;
-
+          max-width: 600px;
           font-family: Inter;
           font-style: normal;
           font-weight: normal;
@@ -80,6 +104,8 @@
           padding-left: 40px;
           padding-right: 20px;
           border-radius: 10px;
+          -moz-border-radius: 10px;
+          -webkit-border-radius: 10px;
           width: 130px;
           height: 130px;
         }
