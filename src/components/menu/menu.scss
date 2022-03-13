@@ -8,9 +8,142 @@
   display: flex;
   justify-content: center;
   align-items: flex-end;
+  .menuOpen {
+    position: fixed;
+    width: 500px;
+    height: 100vh;
+    background: #13315e;
+    .menuOpen__nav {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 52px;
+      color: #ffffff;
+      cursor: pointer;
+
+      .menuOpen__main {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 52px;
+        color: #ffffff;
+        padding-left: 35px;
+        height: 70px;
+        padding-top: 20px;
+
+        &:hover {
+          background: rgba(255, 255, 255, 0.06);
+        }
+      }
+      .menuOpen__myProfile {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 52px;
+        color: #ffffff;
+        padding-left: 35px;
+        height: 70px;
+        padding-top: 20px;
+        padding-left: 35px;
+        padding-top: 20px;
+        height: 78px;
+        &:hover {
+          background: rgba(255, 255, 255, 0.06);
+        }
+      }
+      .menuOpen__createPage {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 52px;
+        color: #ffffff;
+        padding-left: 35px;
+        height: 70px;
+        padding-top: 20px;
+        padding-left: 35px;
+        padding-top: 20px;
+        height: 78px;
+        &:hover {
+          background: rgba(255, 255, 255, 0.06);
+        }
+      }
+      .menuOpen__exit {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 52px;
+        color: #ffffff;
+        padding-left: 35px;
+        height: 70px;
+        padding-top: 20px;
+        padding-left: 35px;
+        padding-top: 20px;
+        height: 78px;
+        &:hover {
+          background: rgba(255, 255, 255, 0.06);
+        }
+      }
+      .active {
+        background: rgba(255, 255, 255, 0.06);
+      }
+    }
+    .menuOpen__header {
+      padding-top: 26px;
+      .menuOpen__name {
+        margin-left: 35px;
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 800;
+        font-size: 26px;
+        line-height: 52px;
+        color: #ffffff;
+      }
+      .menuOpen__date {
+        margin-left: 35px;
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 52px;
+        color: rgba(255, 255, 255, 0.5);
+      }
+    }
+    .menuOpen__closeMenu {
+      margin-top: 360px;
+      .menuOpen__content {
+        height: 100px;
+        width: 500px;
+        display: flex;
+        padding-top: 15px;
+        padding-left: 35px;
+        background: #0a2246;
+        .menuOpen__closeIcon {
+          cursor: pointer;
+          padding-top: 5px;
+          width: 14px;
+          height: 14px;
+        }
+        .menuOpen__menu {
+          padding-left: 11px;
+          font-family: Inter;
+          font-style: normal;
+          font-weight: 600;
+          font-size: 17px;
+          line-height: 24px;
+          letter-spacing: 0.12em;
+          color: #ffffff;
+        }
+      }
+    }
+  }
   &__content {
-    display: block; 
-    padding-bottom: 47px;
+    display: block;
+    padding-bottom: 26px;
     .menu__icon {
       width: 20px;
       height: 16px;

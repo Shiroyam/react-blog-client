@@ -26,6 +26,7 @@
         cursor: pointer;
         position: relative;
       }
+
       .menu__searchInput {
         position: absolute;
         outline: none;
@@ -45,13 +46,19 @@
       .menu__searchIcon {
         padding-top: 21px;
         cursor: pointer;
-        padding-right: 26px;
+        margin-right: 26px;
+        &:hover {
+          opacity: 0.5;
+        }
+      }
+      .menu__createIcon {
+        margin-right: 26px;
+        cursor: pointer;
         &:hover {
           opacity: 0.5;
         }
       }
       .menu__userIcon {
-        padding-top: 21px;
         cursor: pointer;
         &:hover {
           opacity: 0.5;

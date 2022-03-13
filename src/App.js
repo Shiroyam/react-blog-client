@@ -6,6 +6,7 @@ import Create from "./pages/create/Create.jsx";
 import Registration from "./pages/modal/registration/Registration.jsx";
 import Authorization from "./pages/modal/аuthorization/Authorization.jsx";
 import axios from "axios";
+import { Routes, Route, Link} from "react-router-dom";
 import { useSelector } from "react-redux";
 import { instance } from "./config/axios";
 
@@ -67,13 +68,16 @@ function App() {
   }
   const flag = useSelector((state) => state.reg.flag);
   return (
-    <>
+    <> 
       <Menu></Menu>
       <Navbar></Navbar>
-      <Main></Main>
-      {/* <Create></Create> */}
       
+      <Routes>
+        <Route path="/" element={<Main/>} />
+        <Route path="/createpage" element={<Create/>}/>
+      </Routes>
       { flag && <Authorization></Authorization>}
+      
     </>
   );
 }

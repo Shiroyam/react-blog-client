@@ -3,13 +3,14 @@ import { useDispatch, useSelector } from "react-redux";
 import s from "./navbar.module.scss";
 import searchIcon from "./../../assets/png/search.png";
 import userIcon from "./../../assets/png/user.png";
+import createIcon from "./../../assets/png/createPng.png";
 import closeSearchPng from "./../../assets/png/VectorcloseSerach.png";
 import { closeSearch, openSearch } from "../../redux/search/action";
 import { openForm } from "../../redux/regModal/action";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const flag = useSelector((state) => state.search.flag);
-  console.log(flag);
   const dispatch = useDispatch();
 
   const closeSearchForm = () => {
@@ -23,12 +24,11 @@ const Navbar = () => {
   const openRegistration = () => {
     dispatch(openForm());
   };
-
   return (
     <>
       <div className={s.navbar}>
         <div className={s.navbar__content}>
-          {flag && <div className={s.navbar__header}>VASYA BLOG</div> }
+          {flag && <div className={s.navbar__header}>VASYA BLOG</div>}
           <div className={s.menu__icon}>
             {flag ? (
               <>
@@ -37,6 +37,9 @@ const Navbar = () => {
                   src={searchIcon}
                   className={s.menu__searchIcon}
                 ></img>
+                {localStorage.getItem("token") && (
+                  <Link to="/createpage"><img src={createIcon} className={s.menu__createIcon}></img></Link>
+                )}
                 <img
                   onClick={openRegistration}
                   src={userIcon}
