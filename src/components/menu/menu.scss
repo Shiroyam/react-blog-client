@@ -21,6 +21,8 @@
       line-height: 52px;
       color: #ffffff;
       cursor: pointer;
+      display: flex;
+      flex-direction: column;
 
       .menuOpen__main {
         font-family: "Inter";

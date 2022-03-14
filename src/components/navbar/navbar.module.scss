@@ -1,11 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=Nunito:wght@800&display=swap");
 .navbar {
-  float: right;
-  &__content {
+  .profile {
+    float: right;
     width: 780px;
     height: 67px;
     border-bottom: 1px solid #f9f9f9;
     border-left: 1px solid #f9f9f9;
+  }
+  &__content {
+    width: 93vw;
     display: flex;
     justify-content: space-between;
     .navbar__header {

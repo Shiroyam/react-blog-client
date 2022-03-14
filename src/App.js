@@ -1,4 +1,5 @@
 import React from "react";
+import Profile from "./pages/myProfile/Profile.jsx";
 import Menu from "./components/menu/Menu.jsx";
 import Navbar from "./components/navbar/Navbar.jsx";
 import Main from "./pages/main/Main.jsx";
@@ -68,16 +69,15 @@ function App() {
   }
   const flag = useSelector((state) => state.reg.flag);
   return (
-    <> 
-      <Menu></Menu>
-      <Navbar></Navbar>
-      
+    <>  
+      <Menu/>
+      <Navbar/>
       <Routes>
-        <Route path="/" element={<Main/>} />
+         <Route path="/" element={<Main/>} /> 
         <Route path="/createpage" element={<Create/>}/>
+        <Route path="/profile" element={<Profile/>}/>
       </Routes>
-      { flag && <Authorization></Authorization>}
-      
+      { flag && <Authorization/>}
     </>
   );
 }

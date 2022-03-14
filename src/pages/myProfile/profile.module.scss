@@ -1,0 +1,62 @@
+.profile {
+  margin-top: 129px;
+  display: flex;
+  justify-content: center;
+  .profile__content {
+    .profile__headerContent {
+      .profile__header {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 800;
+        font-size: 58px;
+        line-height: 52px;
+        color: #0058d9;
+      }
+      .profile__date {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 52px;
+        color: #202020;
+      }
+    }
+    .profile__line {
+      width: 556px;
+      height: 1px;
+      background: #f2f2f2;
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+    .profile__toggleContent {
+      display: flex;
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 17px;
+      color: #1d1d1d;
+      .active {
+        background: rgba(64, 210, 105, 0.08);
+        color: #36b55a;
+        border-radius: 4px;
+      }
+      .profile__toggleArticle {
+        cursor: pointer;
+        padding-top: 8px;
+        margin-right: 14px;
+        width: 81px;
+        height: 32px;
+        text-align: center;
+      }
+
+      .profile__toggleComment {
+        cursor: pointer;
+        text-align: center;
+        padding-top: 8px;
+        width: 130px;
+        height: 32px;
+      }
+    }
+  }
+}

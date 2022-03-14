@@ -7,10 +7,11 @@ import createIcon from "./../../assets/png/createPng.png";
 import closeSearchPng from "./../../assets/png/VectorcloseSerach.png";
 import { closeSearch, openSearch } from "../../redux/search/action";
 import { openForm } from "../../redux/regModal/action";
-import { Link } from "react-router-dom";
+import { Link} from "react-router-dom";
 
 const Navbar = () => {
   const flag = useSelector((state) => state.search.flag);
+  const profile = useSelector((state) => state.profile.flag);
   const dispatch = useDispatch();
 
   const closeSearchForm = () => {
@@ -27,7 +28,7 @@ const Navbar = () => {
   return (
     <>
       <div className={s.navbar}>
-        <div className={s.navbar__content}>
+        <div className={ profile?`${s.navbar__content}`:`${s.navbar__content} ${s.profile}`}>
           {flag && <div className={s.navbar__header}>VASYA BLOG</div>}
           <div className={s.menu__icon}>
             {flag ? (
@@ -63,7 +64,7 @@ const Navbar = () => {
             )}
           </div>
         </div>
-        <div className={s.article}>
+        {/* <div className={s.article}>
           <div className={s.article__content}>
             <div className={s.article__textContent}>
               <div className={s.article__header}>
@@ -134,7 +135,7 @@ const Navbar = () => {
               />
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </>
   );
