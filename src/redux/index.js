@@ -4,11 +4,13 @@ import thunk from "redux-thunk";
 import {regReducer} from './regModal/reducer'
 import { searchReducer } from "./search/reducer";
 import {profileReducer} from "./profile/reducer"
+import {postReducer} from "./post/reducer"
 
 const rootReducer = combineReducers({
   reg:regReducer,
   search:searchReducer,
-  profile:profileReducer
+  profile:profileReducer,
+  post:postReducer
 });
 
 export const store = createStore(

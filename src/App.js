@@ -73,7 +73,7 @@ function App() {
       <Menu/>
       <Navbar/>
       <Routes>
-         <Route path="/" element={<Main/>} /> 
+        <Route path="/" element={<Main/>} /> 
         <Route path="/createpage" element={<Create/>}/>
         <Route path="/profile" element={<Profile/>}/>
       </Routes>

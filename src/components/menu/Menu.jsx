@@ -9,8 +9,11 @@ import { NavLink } from "react-router-dom";
 const Menu = () => {
   const [openCloseMenu, setOpenCloseMenu] = React.useState(false);
   const dispatch = useDispatch()
-  const flag = useSelector((state) => state.profile.flag);
-  console.log(flag)
+
+  const clearLocalStorage = () => {
+    localStorage.clear();
+  }
+
   const oProfile = () => {
     dispatch(openProfile())
   }
@@ -27,6 +30,7 @@ const Menu = () => {
               <div className="menuOpen__name">Вася Пупкин</div>
               <div className="menuOpen__date">
                 Дата регистрации: 12 августа 2019 в 08:06
+              </div>
               </div>
               <div className="menuOpen__nav">
                 <NavLink
@@ -53,14 +57,14 @@ const Menu = () => {
                 >
                   Создать запись
                 </NavLink>
-                <NavLink
-                  onClick={cProfile}
+                <div
+                  onClick={clearLocalStorage}
                   className="menuOpen__exit"
                   style={{ textDecoration: "none" }}
                   to="/createPage"
                 >
                   Выйти
-                </NavLink>
+                </div>
               </div>
               <div className="menuOpen__closeMenu">
                 <div className="menuOpen__content">
@@ -72,7 +76,6 @@ const Menu = () => {
                   <div className="menuOpen__menu">Меню</div>
                 </div>
               </div>
-            </div>
           </div>
         ) : (
           <div className="menu__content">

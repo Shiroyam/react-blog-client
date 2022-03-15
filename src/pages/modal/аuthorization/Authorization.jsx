@@ -39,7 +39,7 @@ const Authorization = () => {
           ></img>
         </div>
         <div className={s.authorization__inputName}>
-          <div className={s.authorization__header}>Имя и фамилия</div>
+          <div className={s.authorization__header}>Email</div>
           <input
             value={name}
             onChange={(e) => setName(e.target.value)}
