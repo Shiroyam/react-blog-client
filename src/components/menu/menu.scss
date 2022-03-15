@@ -4,7 +4,8 @@
   height: 100vh;
   top: 0px;
   background: #13315e;
-  float: right;
+  position: fixed;
+  right: 0;
   display: flex;
   justify-content: center;
   align-items: flex-end;

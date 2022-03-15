@@ -69,6 +69,9 @@ function App() {
     }
   }
   const flag = useSelector((state) => state.reg.flag);
+  const data = useSelector((state) => state);
+  const id = data.post._id;
+  console.log(id)
   return (
     <>  
       <Menu/>

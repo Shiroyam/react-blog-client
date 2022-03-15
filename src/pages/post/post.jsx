@@ -1,30 +1,26 @@
 import s from "./post.module.scss";
+import { useSelector } from "react-redux";
 
 const Post = () => {
+const data = useSelector((state) => state);
+
+
   return (
     <div className={s.post}>
-      <div className={s.post__headerContainer}>
-        <div className={s.post__dateContainer}>
+      <div style={{backgroundImage:`url(${data.post.photoUrl})`}} className={s.post__headerContainer}>
+        <div  className={s.post__dateContainer}>
           <div className={s.post__date}>12 августа 2019 в 08:06</div>
           <div className={s.post__views}></div>
         </div>
-        <p className={s.post__header}>Какой-то очень интересный заголовок</p>
+        <p className={s.post__header}>{data.post.title}</p>
         <p className={s.post_discription}>
-          Я часто замечаю, что начинающие фронтенд-разработчики по несколько раз
-          то начинают, то забрасывают изучение технологий.
+          {data.post.description}
         </p>
       </div>
       <div className={s.post__content}>
         <div className={s.post__textContainer}>
           <p className={s.post__text}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
-            scelerisque diam arcu risus. Imperdiet dolor, porttitor pellentesque
-            fringilla aliquet sit. Turpis arcu vitae quis nunc suscipit. Mattis
-            scelerisque leo curabitur faucibus. Nec, sed porta ac enim. Mattis
-            quam accumsan ipsum commodo sed purus mi. Platea sit lectus neque,
-            nulla sapien vitae nulla. Nisl viverra viverra quis mattis tincidunt
-            laoreet amet, laoreet proin. Duis mi, aliquam tincidunt amet
-            phasellus malesuada non nisi.
+          {data.post.text}
           </p>
         </div>
         <div className={s.post__commentsContainer}>
@@ -40,6 +36,13 @@ const Post = () => {
             <div className={s.post__text}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Porttitor
               adipiscing leo id sed neque, diam nibh.
+            </div>
+          </div>
+          <div className={s.post_commentForm}>
+            <p className={s.post_commentHeaderForm}>Добавить комментарий</p>
+            <textarea type="text" className={s.post_commentTextForm}></textarea>
+            <div className={s.post_btnContainer}>
+              <button className={s.post__btnForm}>Отправить</button>
             </div>
           </div>
         </div>

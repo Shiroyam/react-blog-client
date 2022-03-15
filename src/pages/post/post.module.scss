@@ -3,12 +3,13 @@
   &__headerContainer {
     width: 49.5vw;
     height: 50vh;
-    background: black;
     padding-top: 129px;
     padding-left: 72px;
+    background: #dbdbdb;
     .post__dateContainer {
       padding-top: 9px;
       .post__date {
+        position: relative;
         font-family: "IBM Plex Sans";
         font-style: normal;
         font-weight: 400;
@@ -20,6 +21,7 @@
       }
     }
     .post__header {
+      position: relative;
       width: 576px;
       font-family: "Inter";
       font-style: normal;
@@ -29,6 +31,7 @@
       color: #ffffff;
     }
     .post_discription {
+      position: relative;
       width: 590px;
       padding-top: 14px;
       font-family: "Inter";
@@ -102,6 +105,57 @@
           border-bottom: 1px solid #f1f1f1;
           padding-top: 16px;
           padding-bottom: 20px;
+        }
+      }
+      .post_commentForm {
+        padding-top: 48px;
+        width: 35vw;
+
+        .post_commentHeaderForm {
+          padding-bottom: 7px;
+          font-family: "Inter";
+          font-style: normal;
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 24px;
+          color: #0a3465;
+        }
+        .post_commentTextForm {
+          width: 35vw;
+          height: 90px;
+          background: #ffffff;
+          border: 1px solid #eceef1;
+          border-radius: 10px;
+          padding-top: 2px;
+          padding-left: 5px;
+          padding-right: 5px;
+          outline: none;
+          resize: none;
+
+          font-family: "Inter";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 22px;
+          color: #373737;
+        }
+        .post__btnForm {
+          cursor: pointer;
+          width: 130px;
+          height: 45px;
+          background: #ffdf36;
+          border-radius: 12px;
+          &:hover {
+            opacity: 0.8;
+          }
+        }
+        .post_btnContainer {
+          display: flex;
+          justify-content: flex-end;
+          .post__btnForm {
+            margin-top: 22px;
+            margin-bottom: 20px;
+          }
         }
       }
     }

@@ -1,10 +1,7 @@
 import s from "./profile.module.scss";
-import { useSelector } from "react-redux";
 import React from "react";
 
-const Profile = () => {   
-    const flag = useSelector((state) => state.profile.flag);
-    console.log(flag)
+const Profile = () => {
   return (
     <>
       <div className={s.profile}>
@@ -17,7 +14,9 @@ const Profile = () => {
           </div>
           <div className={s.profile__line}></div>
           <div className={s.profile__toggleContent}>
-            <div className={`${s.profile__toggleArticle} ${s.active}`}>Статьи</div>
+            <div className={`${s.profile__toggleArticle} ${s.active}`}>
+              Статьи
+            </div>
             <div className={`${s.profile__toggleComment}`}>Комментарии</div>
           </div>
         </div>
