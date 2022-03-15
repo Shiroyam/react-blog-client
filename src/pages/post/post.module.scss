@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100&family=Inter:wght@400;500;600;800&family=Nunito:wght@800&display=swap");
+.post {
+  &__headerContainer {
+    width: 49.5vw;
+    height: 50vh;
+    background: black;
+    padding-top: 129px;
+    padding-left: 72px;
+    .post__dateContainer {
+      padding-top: 9px;
+      .post__date {
+        font-family: "IBM Plex Sans";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 18px;
+        letter-spacing: 0.01em;
+        text-transform: uppercase;
+        color: #c1c1c1;
+      }
+    }
+    .post__header {
+      width: 576px;
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 800;
+      font-size: 50px;
+      line-height: 52px;
+      color: #ffffff;
+    }
+    .post_discription {
+      width: 590px;
+      padding-top: 14px;
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 24px;
+      color: rgba(255, 255, 255, 0.7);
+    }
+  }
+  &__content {
+    margin-left: 72px;
+    .post__textContainer {
+      margin-top: 37px;
+      .post__text {
+        width: 35vw;
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 26px;
+        color: #000000;
+      }
+    }
+    .post__commentsContainer {
+      padding-top: 60px;
+      padding-right: 470px;
+      .post__headerComments {
+        .post__header {
+          font-family: "Inter";
+          font-style: normal;
+          font-weight: 600;
+          font-size: 24px;
+          line-height: 24px;
+          color: #0a3465;
+        }
+      }
+      .post__coment {
+        margin-top: 37px;
+        width: 35vw;
+        height: 80px;
+        .post__headerComment {
+          display: flex;
+          justify-content: space-between;
+          .post__header {
+            font-family: "Inter";
+            font-style: normal;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 18px;
+            color: #373737;
+          }
+          .post__date {
+            font-family: "IBM Plex Sans";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 16px;
+            letter-spacing: 0.01em;
+            text-transform: uppercase;
+            color: #c1c1c1;
+          }
+        }
+        .post__text {
+          font-family: "Inter";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 22px;
+          color: #373737;
+          border-bottom: 1px solid #f1f1f1;
+          padding-top: 16px;
+          padding-bottom: 20px;
+        }
+      }
+    }
+  }
+}

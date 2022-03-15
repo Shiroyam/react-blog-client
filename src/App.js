@@ -6,6 +6,7 @@ import Main from "./pages/main/Main.jsx";
 import Create from "./pages/create/Create.jsx";
 import Registration from "./pages/modal/registration/Registration.jsx";
 import Authorization from "./pages/modal/аuthorization/Authorization.jsx";
+import Post from "./pages/post/post.jsx";
 import axios from "axios";
 import { Routes, Route, Link} from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -72,8 +73,9 @@ function App() {
     <>  
       <Menu/>
       <Navbar/>
-      <Routes>
-        <Route path="/" element={<Main/>} /> 
+      <Routes>   
+        <Route path="/" element={<Main/>} />
+        <Route path="/post" element={<Post />}/>
         <Route path="/createpage" element={<Create/>}/>
         <Route path="/profile" element={<Profile/>}/>
       </Routes>

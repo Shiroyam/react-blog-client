@@ -10,7 +10,7 @@ import views from "./../../assets/png/views.png";
 import { closeProfile } from "../../redux/profile/action";
 import { closeSearch, openSearch } from "../../redux/search/action";
 import { openForm } from "../../redux/regModal/action";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { getPost } from "../../redux/post/action";
 
 const Navbar = () => {
@@ -23,7 +23,7 @@ const Navbar = () => {
 
   React.useEffect(() => {
     dispatch(getPost());
-  });
+  }, []);
 
   const cProfile = () => {
     dispatch(closeProfile());
@@ -133,10 +133,9 @@ const Navbar = () => {
             </div>
           </div>
         )}
-
         {!profile && (
           <>
-            {posts.map((post) => (
+            {posts.map((post) => (<NavLink to='/post' style={{ textDecoration: "none" }}>
               <div className={s.article}>
                 <div id={post.id} className={s.article__content}>
                   <div className={s.article__textContent}>
@@ -151,10 +150,12 @@ const Navbar = () => {
                     </div>
                   </div>
                   <div className={s.article__imgContent}>
-                    <img className={s.article__img} src={post.photoUrl} />
+                 {post.photoUrl === "..." ? <div/> : <img className={s.article__img} src={post.photoUrl} />} 
                   </div>
                 </div>
               </div>
+            </NavLink>
+              
             ))}
           </>
         )}
