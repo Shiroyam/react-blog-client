@@ -13,14 +13,7 @@ const Menu = () => {
   const clearLocalStorage = () => {
     localStorage.clear();
   };
-
-  const oProfile = () => {
-    dispatch(openProfile());
-  };
-
-  const cProfile = () => {
-    dispatch(closeProfile());
-  };
+  
   return (
     <>
       <div className="menu">
@@ -34,7 +27,7 @@ const Menu = () => {
             </div>
             <div className="menuOpen__nav">
               <NavLink
-                onClick={cProfile}
+                onClick={()=>dispatch(closeProfile())}
                 className="menuOpen__main"
                 style={{ textDecoration: "none" }}
                 to="/"
@@ -42,7 +35,7 @@ const Menu = () => {
                 Главная
               </NavLink>
               <NavLink
-                onClick={oProfile}
+                onClick={() => dispatch(openProfile())}
                 className="menuOpen__myProfile"
                 style={{ textDecoration: "none" }}
                 to="/profile"
@@ -50,7 +43,7 @@ const Menu = () => {
                 Мой профиль
               </NavLink>
               <NavLink
-                onClick={cProfile}
+                onClick={()=>dispatch(closeProfile())}
                 className="menuOpen__createPage"
                 style={{ textDecoration: "none" }}
                 to="/createPage"

@@ -23,26 +23,7 @@ const Navbar = () => {
   React.useEffect(() => {
     dispatch(getPost());
   }, []);
-
-  const openPostF = (id) => {
-    dispatch(openPost(id));
-  };
-
-  const cProfile = () => {
-    dispatch(closeProfile());
-  };
-
-  const closeSearchForm = () => {
-    dispatch(closeSearch());
-  };
-
-  const openSearchForm = () => {
-    dispatch(openSearch());
-  };
-
-  const openRegistration = () => {
-    dispatch(openForm());
-  };
+  
   return (
     <>
       <div className={profile ? `${s.navbar}` : `${s.navbar} ${s.right}`}>
@@ -54,7 +35,7 @@ const Navbar = () => {
                 <>
                   {!profile && (
                     <img
-                      onClick={openSearchForm}
+                      onClick={()=>dispatch(openSearch())}
                       src={searchIcon}
                       className={s.menu__searchIcon}
                     ></img>
@@ -62,7 +43,7 @@ const Navbar = () => {
                   {localStorage.getItem("token") && (
                     <Link to="/createpage">
                       <img
-                        onClick={cProfile}
+                        onClick={() =>dispatch(closeProfile())}
                         src={createIcon}
                         className={s.menu__createIcon}
                       ></img>
@@ -70,7 +51,7 @@ const Navbar = () => {
                   )}
                   {!localStorage.getItem("token") && (
                     <img
-                      onClick={openRegistration}
+                      onClick={()=>dispatch(openForm())}
                       src={userIcon}
                       className={s.menu__userIcon}
                     ></img>
@@ -84,7 +65,7 @@ const Navbar = () => {
                     type="text"
                   ></input>
                   <img
-                    onClick={closeSearchForm}
+                    onClick={()=>dispatch(closeSearch())}
                     className={s.menu__searchClose}
                     src={closeSearchPng}
                   />
@@ -100,7 +81,7 @@ const Navbar = () => {
                 <>
                   {!profile && (
                     <img
-                      onClick={openSearchForm}
+                      onClick={()=>dispatch(openSearch())}
                       src={searchIcon}
                       className={s.menu__searchIcon}
                     ></img>
@@ -108,7 +89,7 @@ const Navbar = () => {
                   {localStorage.getItem("token") && (
                     <Link to="/createpage">
                       <img
-                        onClick={cProfile}
+                        onClick={() =>dispatch(closeProfile())}
                         src={createIcon}
                         className={s.menu__createIcon}
                       ></img>
@@ -123,7 +104,7 @@ const Navbar = () => {
                     type="text"
                   ></input>
                   <img
-                    onClick={closeSearchForm}
+                    onClick={()=>dispatch(closeSearch())}
                     className={s.menu__searchClose}
                     src={closeSearchPng}
                   />
@@ -140,7 +121,7 @@ const Navbar = () => {
                 to={`/post/${post._id}`}
                 style={{ textDecoration: "none" }}
               >
-                <div onClick={() => openPostF(post._id)} className={s.article}>
+                <div onClick={() => dispatch(openPost(post._id))} className={s.article}>
                   <div className={s.article__content}>
                     <div className={s.article__textContent}>
                       <div className={s.article__header}>{post.title}</div>
