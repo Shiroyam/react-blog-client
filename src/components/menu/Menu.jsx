@@ -25,10 +25,7 @@ const Menu = () => {
             {localStorage.getItem("token") ? (
               <>
                 <div className="menuOpen__header">
-                  <div className="menuOpen__name">Вася Пупкин</div>
-                  <div className="menuOpen__date">
-                    Дата регистрации: 12 августа 2019 в 08:06
-                  </div>
+                  <div className="menuOpen__name">{window.localStorage.getItem('name')}</div>
                 </div>
                 <div className="menuOpen__nav">
                   <NavLink
@@ -79,7 +76,7 @@ const Menu = () => {
                   className="menuOpen__main"
                   style={{ textDecoration: "none" }}
                 >
-                  Зарегистрировать?
+                  Зарегистрироваться?
                 </div>
                 <div
                   onClick={()=>dispatch(openFormAuth())}

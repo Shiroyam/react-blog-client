@@ -8,6 +8,8 @@ export const regReducer =(state = initState, action) =>{
             return {...state, flagReg: true}
         case "CLOSE_FORM_REG":
             return {...state, flagReg: false}
+        case "POST_REG":
+            return state
         default:
             return state
     }

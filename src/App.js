@@ -13,7 +13,6 @@ import { useSelector } from "react-redux";
 function App() {
   const flagAuth = useSelector((state) => state.auth.flagAuth);
   const flagReg = useSelector((state) => state.reg.flagReg)
-
   return (
     <>
     {flagReg && <Registration/>}

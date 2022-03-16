@@ -7,6 +7,7 @@ import {postsReducer} from "./posts/reducer"
 import { postReducer } from "./posts/reducerOpen";
 import {authReducer} from "./authorization/reducer"
 import { regReducer } from "./registration/regReducer";
+import {commentsReducer} from "./comments/reducer"
 
 
 
@@ -16,7 +17,8 @@ const rootReducer = combineReducers({
   open:postReducer,
   profile:profileReducer,
   auth:authReducer,
-  reg:regReducer
+  reg:regReducer,
+  comments:commentsReducer
 });
 
 export const store = createStore(

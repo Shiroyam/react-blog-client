@@ -3,16 +3,27 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { openPost } from "../../redux/posts/actionOpenPost";
-
+import { postComments, getComments } from "../../redux/comments/action";
+import { instance } from "../../config/axios";
 const Post = () => {
-  const { id } = useParams();
-  const data = useSelector((state) => state);
-  const post = data.open;
   const dispatch = useDispatch();
-  React.useEffect(() => {
-    dispatch(openPost(id));
-  }, []);
+  const [text, setText] = React.useState('')
+  const { id } = useParams();
+  const postResp = useSelector((state) => state);
+  const post = postResp.open;
+  const comments = useSelector((state)=> state.comments)
+  console.log(comments)
 
+  React.useEffect(() => { 
+    dispatch(openPost(id));
+    dispatch(getComments(id))
+  }, [id]);
+
+  const postComment = async (text, id) => {
+    dispatch(postComments(text, id))
+    window.location.reload()
+  }
+   
   return (
     <div className={s.post}>
       <div
@@ -35,23 +46,37 @@ const Post = () => {
             <p className={s.post__header}>Комментарии (3)</p>
             <div className={s.post__quantity}></div>
           </div>
-          <div className={s.post__coment}>
-            <div className={s.post__headerComment}>
-              <div className={s.post__header}>Vasya Pupkin</div>
-              <div className={s.post__date}>12 августа 2019 в 08:06</div>
+
+          {(comments.response ?? []).map((comment) => (
+            <div key={comment._id} className={s.post__coment}>
+              <div className={s.post__headerComment}>
+                <div className={s.post__header}>{comment.user.fullName}</div>
+                <div className={s.post__date}>{comment.createdAt}</div>
+              </div>
+              <div className={s.post__text}>
+               {comment.text}
+              </div>
             </div>
-            <div className={s.post__text}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Porttitor
-              adipiscing leo id sed neque, diam nibh.
+          ))}
+          {window.localStorage.getItem("token") && (
+            <div className={s.post_commentForm}>
+              <p className={s.post_commentHeaderForm}>Добавить комментарий</p>
+              <textarea
+                value={text}
+                onChange={(e) => setText(e.target.value)}
+                type="text"
+                className={s.post_commentTextForm}
+              ></textarea>
+              <div className={s.post_btnContainer}>
+                <button
+                  onClick={() => postComment(text, id)}
+                  className={s.post__btnForm}
+                >
+                  Отправить
+                </button>
+              </div>
             </div>
-          </div>
-          <div className={s.post_commentForm}>
-            <p className={s.post_commentHeaderForm}>Добавить комментарий</p>
-            <textarea type="text" className={s.post_commentTextForm}></textarea>
-            <div className={s.post_btnContainer}>
-              <button className={s.post__btnForm}>Отправить</button>
-            </div>
-          </div>
+          )}
         </div>
       </div>
     </div>

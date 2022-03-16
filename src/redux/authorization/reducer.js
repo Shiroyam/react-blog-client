@@ -8,6 +8,8 @@ const initState = {
         return { ...state, flagAuth: true };
       case "CLOSE_FORM_AUTH":
         return { ...state, flagAuth: false };
+      case "POST_AUTH":
+        return {...state, ...action.payload}
       default:
         return state;
     }
