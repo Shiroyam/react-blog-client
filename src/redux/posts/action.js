@@ -12,14 +12,3 @@ export const getPost = () => async (dispatch) => {
   }
 };
 
-export const openPost = (id) => async (dispatch) => {
-  try {
-  const {data} = await instance(`/posts/${id}`);
-    dispatch({
-      type: "OPEN_POST",
-      payload: data,
-    });
-  } catch (error) {
-    alert(error);
-  }
-};

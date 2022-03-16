@@ -2,6 +2,7 @@
 .right {
   float: right;
 }
+
 .navbar {
   margin-right: 100px;
   &__content__open {
@@ -68,6 +69,7 @@
       }
     }
   }
+
   &__content {
     border-bottom: 1px solid #f9f9f9;
     border-left: 1px solid #f9f9f9;
@@ -135,6 +137,7 @@
       }
     }
   }
+
   .article {
     cursor: pointer;
     border-bottom: 1px solid #f9f9f9;
@@ -145,6 +148,7 @@
       border-left: 4px solid #13315e;
       background: rgba(138, 164, 183, 0.03);
     }
+
     &__content {
       padding-left: 30px;
       display: flex;

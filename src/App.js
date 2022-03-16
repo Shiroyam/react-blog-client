@@ -71,14 +71,14 @@ function App() {
   const flag = useSelector((state) => state.reg.flag);
   const data = useSelector((state) => state);
   const id = data.post._id;
-  console.log(id)
+  
   return (
     <>  
       <Menu/>
       <Navbar/>
       <Routes>   
         <Route path="/" element={<Main/>} />
-        <Route path="/post" element={<Post />}/>
+        <Route path="/post/:id" element={<Post />}/>
         <Route path="/createpage" element={<Create/>}/>
         <Route path="/profile" element={<Profile/>}/>
       </Routes>

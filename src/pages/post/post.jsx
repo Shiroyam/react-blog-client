@@ -1,27 +1,34 @@
 import s from "./post.module.scss";
-import { useSelector } from "react-redux";
+import React from "react";
+import { useParams } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { openPost } from "../../redux/posts/actionOpenPost";
 
 const Post = () => {
-const data = useSelector((state) => state);
-
+  const { id } = useParams();
+  const data = useSelector((state) => state);
+  const post = data.open;
+  const dispatch = useDispatch();
+  React.useEffect(() => {
+    dispatch(openPost(id));
+  }, []);
 
   return (
     <div className={s.post}>
-      <div style={{backgroundImage:`url(${data.post.photoUrl})`}} className={s.post__headerContainer}>
-        <div  className={s.post__dateContainer}>
-          <div className={s.post__date}>12 августа 2019 в 08:06</div>
-          <div className={s.post__views}></div>
+      <div
+        style={{ backgroundImage: `url(${post.photoUrl})` }}
+        className={s.post__headerContainer}
+      >
+        <div className={s.post__dateContainer}>
+          <div className={s.post__date}>{post.createdAt}</div>
+          <div className={s.post__views}>{post.views}</div>
         </div>
-        <p className={s.post__header}>{data.post.title}</p>
-        <p className={s.post_discription}>
-          {data.post.description}
-        </p>
+        <p className={s.post__header}>{post.title}</p>
+        <p className={s.post_discription}>{post.description}</p>
       </div>
       <div className={s.post__content}>
         <div className={s.post__textContainer}>
-          <p className={s.post__text}>
-          {data.post.text}
-          </p>
+          <p className={s.post__text}>{post.text}</p>
         </div>
         <div className={s.post__commentsContainer}>
           <div className={s.post__headerComments}>

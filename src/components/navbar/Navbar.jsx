@@ -5,13 +5,13 @@ import userIcon from "./../../assets/png/user.png";
 import createIcon from "./../../assets/png/createPng.png";
 import closeSearchPng from "./../../assets/png/VectorcloseSerach.png";
 import views from "./../../assets/png/views.png";
-import { instance } from "../../config/axios";
 import { useDispatch, useSelector } from "react-redux";
 import { closeProfile } from "../../redux/profile/action";
 import { closeSearch, openSearch } from "../../redux/search/action";
 import { openForm } from "../../redux/regModal/action";
 import { Link, NavLink } from "react-router-dom";
-import { getPost, openPost } from "../../redux/post/action";
+import { getPost } from "../../redux/posts/action";
+import { openPost } from "../../redux/posts/actionOpenPost";
 
 const Navbar = () => {
   const flag = useSelector((state) => state.search.flag);
@@ -22,7 +22,7 @@ const Navbar = () => {
 
   React.useEffect(() => {
     dispatch(getPost());
-  },);
+  }, []);
 
   const openPostF = (id) => {
     dispatch(openPost(id));
@@ -136,12 +136,11 @@ const Navbar = () => {
           <>
             {(posts ?? []).map((post) => (
               <NavLink
-              key={post._id}
-                to="/post"
-                onClick={() =>  openPostF(post._id)}
+                key={post._id}
+                to={`/post/${post._id}`}
                 style={{ textDecoration: "none" }}
               >
-                <div  className={s.article}>
+                <div onClick={() => openPostF(post._id)} className={s.article}>
                   <div className={s.article__content}>
                     <div className={s.article__textContent}>
                       <div className={s.article__header}>{post.title}</div>
