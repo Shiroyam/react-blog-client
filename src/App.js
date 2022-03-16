@@ -11,10 +11,13 @@ import { Routes, Route } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 function App() {
-  const flag = useSelector((state) => state.reg.flag);
+  const flagAuth = useSelector((state) => state.auth.flagAuth);
+  const flagReg = useSelector((state) => state.reg.flagReg)
 
   return (
     <>
+    {flagReg && <Registration/>}
+    {flagAuth && <Authorization />}
       <Menu />
       <Navbar />
       <Routes>
@@ -23,7 +26,7 @@ function App() {
         <Route path="/createpage" element={<Create />} />
         <Route path="/profile" element={<Profile />} />
       </Routes>
-      {flag && <Authorization />}
+      
     </>
   );
 }

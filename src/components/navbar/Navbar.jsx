@@ -8,7 +8,7 @@ import views from "./../../assets/png/views.png";
 import { useDispatch, useSelector } from "react-redux";
 import { closeProfile } from "../../redux/profile/action";
 import { closeSearch, openSearch } from "../../redux/search/action";
-import { openForm } from "../../redux/regModal/action";
+import { openFormAuth} from "../../redux/authorization/action";
 import { Link, NavLink } from "react-router-dom";
 import { getPost } from "../../redux/posts/action";
 import { openPost } from "../../redux/posts/actionOpenPost";
@@ -51,7 +51,7 @@ const Navbar = () => {
                   )}
                   {!localStorage.getItem("token") && (
                     <img
-                      onClick={()=>dispatch(openForm())}
+                      onClick={()=>dispatch(openFormAuth())}
                       src={userIcon}
                       className={s.menu__userIcon}
                     ></img>

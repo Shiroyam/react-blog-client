@@ -121,6 +121,9 @@
       text-align: center;
       color: #68572d;
       cursor: pointer;
+      &:hover {
+        opacity: 0.7;
+      }
     }
   }
 }

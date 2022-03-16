@@ -2,7 +2,8 @@ import React from "react";
 import s from "./authorization.module.scss";
 import close from "./../../../assets/png/Close.png";
 import { useDispatch } from "react-redux";
-import { closeForm } from "../../../redux/regModal/action";
+import { closeFormAuth } from "../../../redux/authorization/action"
+import { openFormReg } from "../../../redux/registration/regAction";
 import { instance } from "../../../config/axios";
 
 const Authorization = () => {
@@ -22,18 +23,21 @@ const Authorization = () => {
     }
   };
   const dispatch = useDispatch();
-  const closeRegistration = () => {
-    dispatch(closeForm());
-  };
+  const openReg = () => {
+    dispatch(closeFormAuth())
+    dispatch(openFormReg())
+  }
+  
   const [name, setName] = React.useState("");
   const [password, setPassword] = React.useState("");
   return (
     <div className={s.authorization}>
       <div className={s.authorization__modal}>
+        <div className={s.authorization__content}>
         <div className={s.authorization__headerContent}>
           <div className={s.authorization__header}>Авторизация</div>
           <img
-            onClick={closeRegistration}
+            onClick={()=> dispatch(closeFormAuth())}
             src={close}
             className={s.authorization__iconClose}
           ></img>
@@ -59,6 +63,8 @@ const Authorization = () => {
         <button onClick={authPost} className={s.btn}>
           Войти
         </button>
+        <div onClick={openReg} className={s.authorization__link}>Хотите зарегистрироваться?</div>
+      </div>
       </div>
     </div>
   );

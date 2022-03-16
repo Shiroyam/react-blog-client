@@ -1,11 +1,12 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { openProfile, closeProfile } from "../../redux/profile/action";
+import "./menu.scss";
 import closeSearchPng from "./../../assets/png/VectorcloseSerach.png";
 import menuIcon from "./../../assets/png/menuIcon.png";
-import "./menu.scss";
-import { openForm } from "../../redux/regModal/action";
-import { Link, NavLink } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { openProfile, closeProfile } from "../../redux/profile/action";
+import { openFormAuth } from "../../redux/authorization/action";
+import { openFormReg } from "../../redux/registration/regAction";
+import { NavLink } from "react-router-dom";
 
 const Menu = () => {
   const [openCloseMenu, setOpenCloseMenu] = React.useState(false);
@@ -73,16 +74,15 @@ const Menu = () => {
                 >
                   Главная
                 </NavLink>
-                <NavLink
-                  onClick={() => dispatch(closeProfile())}
+                <div
+                  onClick={() => dispatch(openFormReg())}
                   className="menuOpen__main"
                   style={{ textDecoration: "none" }}
-                  to="/2"
                 >
                   Зарегистрировать?
-                </NavLink>
+                </div>
                 <div
-                  onClick={()=>dispatch(openForm())}
+                  onClick={()=>dispatch(openFormAuth())}
                   className="menuOpen__main"
                   style={{ textDecoration: "none" }}
                   to="/1"

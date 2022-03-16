@@ -1,13 +1,20 @@
 import s from "./registration.module.scss";
 import close from "./../../../assets/png/Close.png";
+import { useDispatch } from "react-redux";
+import { closeFormReg } from "../../../redux/registration/regAction";
 
 const Registration = () => {
+  const dispatch = useDispatch();
   return (
     <div className={s.registration}>
       <div className={s.registration__modal}>
         <div className={s.registration__headerContent}>
           <div className={s.registration__header}>Регистрация</div>
-          <img src={close} className={s.registration__iconClose}></img>
+          <img
+            src={close}
+            onClick={() => dispatch(closeFormReg())}
+            className={s.registration__iconClose}
+          ></img>
         </div>
 
         <div className={s.registration__inputName}>
