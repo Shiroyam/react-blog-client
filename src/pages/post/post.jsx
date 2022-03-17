@@ -1,5 +1,6 @@
 import s from "./post.module.scss";
 import React from "react";
+import views from "./../../assets/png/views.png";
 import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { openPost } from "../../redux/posts/actionOpenPost";
@@ -31,7 +32,11 @@ const Post = () => {
       >
         <div className={s.post__dateContainer}>
           <div className={s.post__date}>{post.createdAt}</div>
+          <div className={s.post__viewsContent}>
+            <img className={s.post__viewsIcon} src={views}></img>
           <div className={s.post__views}>{post.views}</div>
+          </div>
+  
         </div>
         <p className={s.post__header}>{post.title}</p>
         <p className={s.post_discription}>{post.description}</p>

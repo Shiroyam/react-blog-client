@@ -25,7 +25,6 @@ function App() {
         <Route path="/createpage" element={<Create />} />
         <Route path="/profile" element={<Profile />} />
       </Routes>
-      
     </>
   );
 }

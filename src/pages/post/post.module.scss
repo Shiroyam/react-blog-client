@@ -7,22 +7,44 @@
     padding-bottom: 50px;
     padding-left: 72px;
     background: #dbdbdb;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
     .post__dateContainer {
       padding-top: 9px;
-      .post__date {
-        position: relative;
-        font-family: "IBM Plex Sans";
-        font-style: normal;
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 18px;
-        letter-spacing: 0.01em;
-        text-transform: uppercase;
-        color: #c1c1c1;
+      position: relative;
+      z-index: 1;
+      font-family: "IBM Plex Sans";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 18px;
+      letter-spacing: 0.01em;
+      text-transform: uppercase;
+      color: #c1c1c1;
+      display: flex;
+      .post__viewsContent {
+        padding-left: 21px;
+        display: flex;
+        .post__viewsIcon {
+          margin-top: 3px;
+          padding-right: 2px;
+          width: 16px;
+          height: 12px;
+        }
       }
     }
     .post__header {
       position: relative;
+      z-index: 1;
       width: 576px;
       font-family: "Inter";
       font-style: normal;
@@ -33,6 +55,7 @@
     }
     .post_discription {
       position: relative;
+      z-index: 1;
       width: 590px;
       padding-top: 14px;
       font-family: "Inter";
@@ -60,6 +83,7 @@
     .post__commentsContainer {
       padding-top: 60px;
       padding-right: 470px;
+
       .post__headerComments {
         .post__header {
           font-family: "Inter";

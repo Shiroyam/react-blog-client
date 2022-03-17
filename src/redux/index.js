@@ -8,8 +8,7 @@ import { postReducer } from "./posts/reducerOpen";
 import {authReducer} from "./authorization/reducer"
 import { regReducer } from "./registration/regReducer";
 import {commentsReducer} from "./comments/reducer"
-
-
+import { postCreateReducer } from "./createPost/reducer";
 
 const rootReducer = combineReducers({
   search:searchReducer,
@@ -18,7 +17,8 @@ const rootReducer = combineReducers({
   profile:profileReducer,
   auth:authReducer,
   reg:regReducer,
-  comments:commentsReducer
+  comments:commentsReducer,
+  create:postCreateReducer,
 });
 
 export const store = createStore(

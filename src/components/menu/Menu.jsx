@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 import { openProfile, closeProfile } from "../../redux/profile/action";
 import { openFormAuth } from "../../redux/authorization/action";
 import { openFormReg } from "../../redux/registration/regAction";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Menu = () => {
   const [openCloseMenu, setOpenCloseMenu] = React.useState(false);
@@ -82,14 +82,14 @@ const Menu = () => {
                 >
                   Зарегистрироваться?
                 </div>
-                <div
+                <Link
+                  to="/"
                   onClick={() => dispatch(openFormAuth())}
                   className="menuOpen__main"
                   style={{ textDecoration: "none" }}
-                  to="/1"
                 >
                   Войти
-                </div>
+                </Link>
               </div>
             )}
             <div className="menuOpen__closeMenu">
