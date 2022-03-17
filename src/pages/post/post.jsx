@@ -4,26 +4,25 @@ import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { openPost } from "../../redux/posts/actionOpenPost";
 import { postComments, getComments } from "../../redux/comments/action";
-import { instance } from "../../config/axios";
+
 const Post = () => {
   const dispatch = useDispatch();
-  const [text, setText] = React.useState('')
+  const [text, setText] = React.useState("");
   const { id } = useParams();
   const postResp = useSelector((state) => state);
   const post = postResp.open;
-  const comments = useSelector((state)=> state.comments)
-  console.log(comments)
-
-  React.useEffect(() => { 
+  const comments = useSelector((state) => state.comments);
+ 
+  React.useEffect(() => {
     dispatch(openPost(id));
-    dispatch(getComments(id))
+    dispatch(getComments(id));
   }, [id]);
 
   const postComment = async (text, id) => {
-    dispatch(postComments(text, id))
-    window.location.reload()
-  }
-   
+    dispatch(postComments(text, id));
+    window.location.reload();
+  };
+
   return (
     <div className={s.post}>
       <div
@@ -43,7 +42,7 @@ const Post = () => {
         </div>
         <div className={s.post__commentsContainer}>
           <div className={s.post__headerComments}>
-            <p className={s.post__header}>Комментарии (3)</p>
+            <p className={s.post__header}>Комментарии ({ comments.response instanceof Array ? comments.response.length : "0"})</p>
             <div className={s.post__quantity}></div>
           </div>
 
@@ -53,9 +52,7 @@ const Post = () => {
                 <div className={s.post__header}>{comment.user.fullName}</div>
                 <div className={s.post__date}>{comment.createdAt}</div>
               </div>
-              <div className={s.post__text}>
-               {comment.text}
-              </div>
+              <div className={s.post__text}>{comment.text}</div>
             </div>
           ))}
           {window.localStorage.getItem("token") && (

@@ -21,11 +21,14 @@ const Menu = () => {
     <>
       <div className="menu">
         {openCloseMenu ? (
+          <>
           <div className="menuOpen">
             {localStorage.getItem("token") ? (
               <>
                 <div className="menuOpen__header">
-                  <div className="menuOpen__name">{window.localStorage.getItem('name')}</div>
+                  <div className="menuOpen__name">
+                    {window.localStorage.getItem("name")}
+                  </div>
                 </div>
                 <div className="menuOpen__nav">
                   <NavLink
@@ -63,6 +66,7 @@ const Menu = () => {
               </>
             ) : (
               <div className="menuOpen__nav">
+                
                 <NavLink
                   onClick={() => dispatch(closeProfile())}
                   className="menuOpen__main"
@@ -79,7 +83,7 @@ const Menu = () => {
                   Зарегистрироваться?
                 </div>
                 <div
-                  onClick={()=>dispatch(openFormAuth())}
+                  onClick={() => dispatch(openFormAuth())}
                   className="menuOpen__main"
                   style={{ textDecoration: "none" }}
                   to="/1"
@@ -99,6 +103,7 @@ const Menu = () => {
               </div>
             </div>
           </div>
+          </>
         ) : (
           <div className="menu__content">
             <div className="menu__header">Меню</div>

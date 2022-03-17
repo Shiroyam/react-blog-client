@@ -5,6 +5,14 @@ import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 
 const Create = () => {
+  const [header, setHeader] = React.useState('')
+  const [discription, setDiscription] = React.useState('')
+  const [link, setLink] = React.useState('')
+  const [text, setText] = React.useState('')
+  const handelChange = (e,editor) => {
+    const data = editor.getData()
+    setText(data)
+  }
   return (
     <div className={s.create}>
       <div className={s.header}>
@@ -12,11 +20,13 @@ const Create = () => {
           className={s.header__input}
           placeholder="Введите заголовок..."
           type="text"
+          value={header}
+          onChange={(e)=>setHeader(e.target.value)}
         />
       </div>
       <div className={s.description}>
         <div className={s.description__header}>Короткое описание</div>
-        <textarea className={s.description__input}></textarea>
+        <textarea value={discription} onChange={(e)=>setDiscription(e.target.value)} className={s.description__input}></textarea>
       </div>
       <div className={s.formLink}>
         <div className={s.formLink__header}>Ссылка на изображение:</div>
@@ -28,7 +38,7 @@ const Create = () => {
       </div>
       <div className={s.textForm}>
         <div className={s.textForm__header}>Полное описание</div>
-        <CKEditor className={s.textForm__text} editor={ClassicEditor} />
+        <CKEditor data={text} onChange={handelChange} className={s.textForm__text} editor={ClassicEditor} />
       </div>
       <button className={s.btnPost}>Опубликовать</button>
     </div>

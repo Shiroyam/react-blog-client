@@ -50,6 +50,7 @@
     ]
   },
   "devDependencies": {
+    "bem-version": "^0.1.0",
     "sass-loader": "^7.1.0"
   }
 }
