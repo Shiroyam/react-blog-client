@@ -7,15 +7,6 @@ import { useDispatch } from "react-redux";
 const Comments = () => {
   const comments = useSelector((state) => state.comments);
   const toggleSwitcher = useSelector((state) => state.profile.toggleSwitcher);
-  const dispatch = useDispatch();
-  const { id } = useParams();
-  React.useEffect(() => {
-    if (toggleSwitcher) {
-      dispatch(getComments(id));
-    } else {
-      dispatch(getComment());
-    }
-  }, [id]);
 
   return (
     <>

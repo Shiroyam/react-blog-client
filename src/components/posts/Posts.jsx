@@ -6,8 +6,10 @@ import { getPost } from "../../redux/posts/action";
 import { openPost } from "../../redux/posts/actionOpenPost";
 import { NavLink } from "react-router-dom";
 import { switchTogglePosts } from "../../redux/profile/action";
+import { useParams } from "react-router-dom";
 
 const Posts = () => {
+    const {id} = useParams()
     const dispatch = useDispatch();
     const data = useSelector((state) => state);
     const posts = data.post.items;
@@ -15,7 +17,7 @@ const Posts = () => {
     React.useEffect(() => {
         dispatch(getPost());
         dispatch(switchTogglePosts())
-      }, []);
+      }, [id]);
 
   return (
     <>

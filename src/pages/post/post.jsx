@@ -8,6 +8,7 @@ import { postComments} from "../../redux/comments/action";
 import { closeProfile } from "../../redux/profile/action";
 import Comments from "../../components/comments/comments";
 import ReactHtmlParser from "html-react-parser"
+import { getComments } from "../../redux/comments/action";
 
 const Post = () => {
   const dispatch = useDispatch();
@@ -18,6 +19,7 @@ const Post = () => {
  
   React.useEffect(() => {
     dispatch(openPost(id));
+    dispatch(getComments(id))
     dispatch(closeProfile())
   }, [id]);
 

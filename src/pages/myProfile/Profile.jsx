@@ -3,6 +3,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { switchToggleComments, switchTogglePosts } from "../../redux/profile/action";
 import { openProfile } from "../../redux/profile/action";
+import { getComment } from "../../redux/comments/action";
 import Posts from "./../../components/posts/Posts.jsx";
 import Comments from "../../components/comments/comments";
 
@@ -11,7 +12,9 @@ const Profile = () => {
   const dispatch = useDispatch();
   React.useEffect(() => {
     dispatch(openProfile());
+    dispatch(getComment());
   }, []);
+
   return (
     <>
       <div className={s.profile}>
