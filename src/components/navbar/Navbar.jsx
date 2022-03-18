@@ -11,7 +11,7 @@ import { closeProfile } from "../../redux/profile/action";
 import { closeSearch, openSearch } from "../../redux/search/action";
 import { openFormAuth} from "../../redux/authorization/action";
 import { Link} from "react-router-dom";
-import { getPost } from "../../redux/posts/action";
+
 
 
 const Navbar = () => {

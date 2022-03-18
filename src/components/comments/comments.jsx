@@ -1,9 +1,6 @@
 import s from "./comments.module.scss";
 import React from "react";
-import { getComments, getComment } from "../../redux/comments/action";
 import { useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
-import { useDispatch } from "react-redux";
 const Comments = () => {
   const comments = useSelector((state) => state.comments);
   const toggleSwitcher = useSelector((state) => state.profile.toggleSwitcher);

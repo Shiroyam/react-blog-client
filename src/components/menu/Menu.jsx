@@ -6,10 +6,15 @@ import { useDispatch } from "react-redux";
 import { openProfile, closeProfile } from "../../redux/profile/action";
 import { openFormAuth } from "../../redux/authorization/action";
 import { openFormReg } from "../../redux/registration/regAction";
+import { closeSearch } from "../../redux/search/action";
 import { Link, NavLink } from "react-router-dom";
 
 const Menu = () => {
   const [openCloseMenu, setOpenCloseMenu] = React.useState(false);
+  const clickMenu = () => {
+    setOpenCloseMenu(true) 
+    dispatch(closeSearch())
+  }
   const dispatch = useDispatch();
 
   const clearLocalStorage = () => {
@@ -109,7 +114,7 @@ const Menu = () => {
             <div className="menu__header">Меню</div>
             <div>
               <img
-                onClick={() => setOpenCloseMenu(true)}
+                onClick={clickMenu}
                 className="menu__icon"
                 src={menuIcon}
               ></img>
