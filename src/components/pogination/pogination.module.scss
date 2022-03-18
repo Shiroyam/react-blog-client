@@ -1,0 +1,35 @@
+.pogination {
+  width: 45.34vw;
+  float: right;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #f9f9f9;
+  border-left: 1px solid #f9f9f9;
+  &__btnContainer {
+    flex-shrink: 0;
+    padding-left: 29px;
+    .pogination__btnLeft {
+      width: 77.1px;
+      height: 50px;
+      background-color: #f9f9f9;
+      margin-right: 9px;
+    }
+    .pogination__btnRight {
+      width: 77.1px;
+      height: 50px;
+      background-color: #f9f9f9;
+    }
+  }
+  &__numberPage {
+    padding-right: 7vw;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    color: #aeb3b7;
+  }
+}
