@@ -34,7 +34,7 @@ const Registration = () => {
 
         <div className={s.registration__inputEmail}>
           <div className={s.registration__header}>Email</div>
-          <input value={email} onChange={(e)=>setEmail(e.target.value)} type="text" className={s.registration__input} />
+          <input value={email} onChange={(e)=>setEmail(e.target.value)} type="email" className={s.registration__input} />
         </div>
 
         <div className={s.registration__inputPassword}>

@@ -7,6 +7,7 @@ import { openPost } from "../../redux/posts/actionOpenPost";
 import { getPost } from "../../redux/posts/action";
 import { closeProfile } from "../../redux/profile/action";
 import { profileComments } from "../../redux/profile/action";
+import { openProfile } from "../../redux/profile/action";
 
 const Profile = () => {
   const data = useSelector((state) => state);
@@ -17,6 +18,7 @@ const Profile = () => {
   const dispatch = useDispatch();
   React.useEffect(() => {
     dispatch(getPost());
+    dispatch(openProfile())
   }, []);
   const togglePosts = () => {
     setSwtitchToggle(true);

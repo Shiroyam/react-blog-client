@@ -4,7 +4,7 @@
 }
 
 .navbar {
-  margin-right: 100px;
+  width: 45.34vw;
   &__content__open {
     width: 93vw;
     display: flex;
@@ -73,7 +73,6 @@
   &__content {
     border-bottom: 1px solid #f9f9f9;
     border-left: 1px solid #f9f9f9;
-    width: 780px;
     height: 67px;
     display: flex;
     justify-content: space-between;
@@ -88,7 +87,7 @@
       color: #0a3465;
     }
     .menu__icon {
-      padding-right: 29px;
+      padding-right: 5vw;
       .menu__searchClose {
         margin-left: 700px;
         margin-top: 25px;
@@ -109,7 +108,7 @@
         line-height: 24px;
         color: #798fa8;
 
-        width: 650px;
+        width: 33.5vw;
         height: 67px;
       }
       .menu__searchIcon {
@@ -130,6 +129,7 @@
       }
       .menu__userIcon {
         padding-top: 21px;
+        margin-right: 26px;
         cursor: pointer;
         &:hover {
           opacity: 0.5;
@@ -138,11 +138,15 @@
     }
   }
 
+  .active {
+    border-left: 4px solid #13315e;
+    background: rgba(138, 164, 183, 0.03);
+  }
   .article {
     cursor: pointer;
     border-bottom: 1px solid #f9f9f9;
     border-left: 1px solid #f9f9f9;
-    width: 750px;
+    width: 40vw;
     height: 210px;
     &:hover {
       border-left: 4px solid #13315e;

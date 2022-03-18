@@ -6,12 +6,13 @@
   left: 0;
   background-color: rgba(0, 0, 0, 0.3);
   position: fixed;
+  z-index: 2;
   display: flex;
   justify-content: center;
   align-items: center;
   &__modal {
     width: 446px;
-    height: 400px;
+    height: 420px;
     background: #ffffff;
     border-radius: 12px;
     .authorization__content {
@@ -19,7 +20,16 @@
       margin-left: 30px;
       .authorization__inputName {
         margin-top: 36px;
-
+        .authorization__context {
+          padding-top: 2px;
+          font-family: Inter;
+          font-style: normal;
+          font-weight: 600;
+          font-size: 13px;
+          line-height: 100%;
+          color: red;
+          padding-bottom: 8px;
+        }
         .authorization__header {
           font-family: Inter;
           font-style: normal;
@@ -41,6 +51,16 @@
       }
       .authorization__inputPassword {
         margin-top: 36px;
+        .authorization__context {
+          padding-top: 2px;
+          font-family: Inter;
+          font-style: normal;
+          font-weight: 600;
+          font-size: 13px;
+          line-height: 100%;
+          color: red;
+          padding-bottom: 8px;
+        }
         .authorization__header {
           font-family: Inter;
           font-style: normal;

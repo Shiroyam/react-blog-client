@@ -10,7 +10,7 @@ const Create = () => {
   const dispatch = useDispatch()
   const [title, setTitle] = React.useState('')
   const [description, setDescription] = React.useState('')
-  const [photoUrl, setPhotoUrl] = React.useState('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4R2AUK7C3tJMNkCuakQ5EWCC1xqiVvIH4YQ&usqp=CAU')
+  const [photoUrl, setPhotoUrl] = React.useState('https://sun9-54.userapi.com/impg/JFJs9at3_7HPI8MAaAOTg_rfKmt50SqBStDvBg/B7jn157A_lE.jpg?size=1280x800&quality=95&sign=4515ac6f6b0a6871fdcaf8cde1941b7f&type=album')
   const [text, setText] = React.useState('')
 
   const postPost = (title, photoUrl, description, text) => {

@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { openPost } from "../../redux/posts/actionOpenPost";
 import { postComments, getComments } from "../../redux/comments/action";
+import ReactHtmlParser from "html-react-parser"
 
 const Post = () => {
   const dispatch = useDispatch();
@@ -12,6 +13,8 @@ const Post = () => {
   const { id } = useParams();
   const postResp = useSelector((state) => state);
   const post = postResp.open;
+  const textPost = post.text
+  console.log(textPost)
   const comments = useSelector((state) => state.comments);
  
   React.useEffect(() => {
@@ -43,7 +46,7 @@ const Post = () => {
       </div>
       <div className={s.post__content}>
         <div className={s.post__textContainer}>
-          <p className={s.post__text}>{post.text}</p>
+          <p className={s.post__text}>{post.text !== undefined ? ReactHtmlParser(post.text) : ""}</p>
         </div>
         <div className={s.post__commentsContainer}>
           <div className={s.post__headerComments}>

@@ -12,11 +12,11 @@ import { useSelector } from "react-redux";
 
 function App() {
   const flagAuth = useSelector((state) => state.auth.flagAuth);
-  const flagReg = useSelector((state) => state.reg.flagReg)
+  const flagReg = useSelector((state) => state.reg.flagReg);
   return (
     <>
-    {flagReg && <Registration/>}
-    {flagAuth && <Authorization />}
+      {flagReg && <Registration />}
+      {flagAuth && <Authorization />}
       <Menu />
       <Navbar />
       <Routes>

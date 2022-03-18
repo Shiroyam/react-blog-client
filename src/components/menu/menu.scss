@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap");
 .menu {
-  width: 100px;
+  width: 5vw;
   height: 100vh;
   top: 0px;
   background: #13315e;
@@ -9,8 +9,7 @@
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  .background {
-  }
+
   .menuOpen {
     position: fixed;
     width: 500px;
@@ -139,14 +138,6 @@
         }
       }
     }
-  }
-  .background {
-    height: 100vh;
-    width: 100vw;
-    top: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.3);
-    position: fixed;
   }
   &__content {
     display: block;
