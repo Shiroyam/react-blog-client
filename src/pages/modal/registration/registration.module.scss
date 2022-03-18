@@ -12,12 +12,22 @@
   align-items: center;
   &__modal {
     width: 446px;
-    height: 475px;
+    height: 550px;
     background: #ffffff;
     border-radius: 12px;
     .registration__inputName {
       margin-top: 36px;
       margin-left: 40px;
+      .registration__context {
+        padding-top: 2px;
+        font-family: Inter;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 13px;
+        line-height: 100%;
+        color: red;
+        padding-bottom: 8px;
+      }
       .registration__header {
         font-family: Inter;
         font-style: normal;
@@ -40,6 +50,16 @@
     .registration__inputEmail {
       margin-top: 36px;
       margin-left: 40px;
+      .registration__context {
+        padding-top: 2px;
+        font-family: Inter;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 13px;
+        line-height: 100%;
+        color: red;
+        padding-bottom: 8px;
+      }
       .registration__header {
         font-family: Inter;
         font-style: normal;
@@ -62,6 +82,16 @@
     .registration__inputPassword {
       margin-top: 36px;
       margin-left: 40px;
+      .registration__context {
+        padding-top: 2px;
+        font-family: Inter;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 13px;
+        line-height: 100%;
+        color: red;
+        padding-bottom: 8px;
+      }
       .registration__header {
         font-family: Inter;
         font-style: normal;
