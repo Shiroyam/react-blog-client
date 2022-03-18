@@ -4,10 +4,10 @@ export const commentsReducer = (state =initState, action) => {
     switch (action.type) {
         case"GET_COMMENTS":
             return {...state, response: action.payload}
-        case"POST_COMMENTS":
-            return state;
         case"GET_COMMENT":
             return {...state, comment:action.payload}
+        case"POST_COMMENTS":
+            return state;    
         default:
             return state;
     }

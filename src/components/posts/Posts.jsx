@@ -6,18 +6,18 @@ import { getPost } from "../../redux/posts/action";
 import { openPost } from "../../redux/posts/actionOpenPost";
 import { NavLink } from "react-router-dom";
 import { switchTogglePosts } from "../../redux/profile/action";
-import { useParams } from "react-router-dom";
 
 const Posts = () => {
-    const {id} = useParams()
+    const {pathname} = window.location
+    const id = pathname.slice(6)
     const dispatch = useDispatch();
     const data = useSelector((state) => state);
     const posts = data.post.items;
-
+    
     React.useEffect(() => {
         dispatch(getPost());
         dispatch(switchTogglePosts())
-      }, [id]);
+      }, []);
 
   return (
     <>
@@ -26,10 +26,11 @@ const Posts = () => {
               key={post._id}
               to={`/post/${post._id}`}
               style={{ textDecoration: "none" }}
+              className={s.link}
             >
               <div
                 onClick={() => dispatch(openPost(post._id))}
-                className={s.article}
+                className={ post._id == id ?  `${s.article} ${s.border}` : `${s.article}`}
               >
                 <div className={s.article__content}>
                   <div className={s.article__textContent}>

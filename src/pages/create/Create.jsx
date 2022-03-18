@@ -10,7 +10,7 @@ const Create = () => {
   const dispatch = useDispatch()
   const [title, setTitle] = React.useState('')
   const [description, setDescription] = React.useState('')
-  const [photoUrl, setPhotoUrl] = React.useState('https://sun9-54.userapi.com/impg/JFJs9at3_7HPI8MAaAOTg_rfKmt50SqBStDvBg/B7jn157A_lE.jpg?size=1280x800&quality=95&sign=4515ac6f6b0a6871fdcaf8cde1941b7f&type=album')
+  const [photoUrl, setPhotoUrl] = React.useState('https://tproger.ru/s3/uploads/2019/04/learn-programming-880x308.png')
   const [text, setText] = React.useState('')
 
   const postPost = (title, photoUrl, description, text) => {

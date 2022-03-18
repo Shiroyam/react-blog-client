@@ -13,12 +13,14 @@ export const getComments = (id) => async (dispatch) => {
     }
 }
 
-export const getComment = () => async (dispatch) =>{
-    const response = await instance.get(`/comments`)
+export const getComment = (num) => async (dispatch) =>{
+    const response = await instance.get(`/comments?page=${num}`)
+    
     const commentsData = response.data
+    const total = commentsData.total
     dispatch({
         type:"GET_COMMENT",
-        payload:commentsData
+        payload:{commentsData, total}
     })
 }
 

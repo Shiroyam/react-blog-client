@@ -11,21 +11,24 @@
   &__btnContainer {
     flex-shrink: 0;
     padding-left: 29px;
-    .disabled {
-      opacity: 0.5;
-    }
     .pogination__btnLeft {
       cursor: pointer;
       width: 77.1px;
       height: 50px;
       background-color: #f9f9f9;
       margin-right: 9px;
+      &:hover {
+        opacity: 0.5;
+      }
     }
     .pogination__btnRight {
       cursor: pointer;
       width: 77.1px;
       height: 50px;
       background-color: #f9f9f9;
+      &:hover {
+        opacity: 0.5;
+      }
     }
   }
   &__numberPage {

@@ -22,7 +22,7 @@ const Authorization = () => {
 
   const authPost = (data) => {
     dispatch(authorizationPost(data.email, data.password));
-    window.location.reload()
+    
   };
 
   const openReg = () => {

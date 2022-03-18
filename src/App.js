@@ -8,7 +8,7 @@ import Registration from "./pages/modal/registration/Registration.jsx";
 import Authorization from "./pages/modal/аuthorization/Authorization.jsx";
 import Post from "./pages/post/post.jsx";
 import { Routes, Route } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 
 function App() {
   const flagAuth = useSelector((state) => state.auth.flagAuth);

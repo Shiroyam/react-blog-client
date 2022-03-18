@@ -3,6 +3,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 const Comments = () => {
   const comments = useSelector((state) => state.comments);
+  console.log(comments)
   const toggleSwitcher = useSelector((state) => state.profile.toggleSwitcher);
 
   return (
@@ -32,7 +33,7 @@ const Comments = () => {
         </div>
       ) : (
         <div className={s.post__commentsContainer}>
-          {(comments.comment.items ?? []).map((comment) => (
+          {(comments.comment.commentsData.items ?? []).map((comment) => (
             <div key={comment._id} className={s.post__coment}>
               <div className={s.post__headerComment}>
                 <div className={s.post__header}>{comment.user.fullName}</div>

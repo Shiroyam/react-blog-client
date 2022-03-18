@@ -1,4 +1,5 @@
 import s from "./main.module.scss";
+import React from "react";
 import VasyPupkin from "./../../assets/png/VasyPupkin.png";
 const Main = () => {
   return (

@@ -6,6 +6,7 @@ import { openProfile } from "../../redux/profile/action";
 import { getComment } from "../../redux/comments/action";
 import Posts from "./../../components/posts/Posts.jsx";
 import Comments from "../../components/comments/comments";
+import Pogination from "../../components/pogination/Pogination";
 
 const Profile = () => {
   const toggleSwitcher = useSelector((state)=> state.profile.toggleSwitcher)
@@ -51,10 +52,12 @@ const Profile = () => {
         {toggleSwitcher ? (
           <>
             <Posts></Posts>
+            <Pogination></Pogination>
           </>
         ) : (
           <>
             <Comments></Comments>
+            <Pogination></Pogination>
           </>
         )}
       </div>
