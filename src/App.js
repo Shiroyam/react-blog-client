@@ -6,7 +6,6 @@ import Main from "./pages/main/Main.jsx";
 import Create from "./pages/create/Create.jsx";
 import Registration from "./pages/modal/registration/Registration.jsx";
 import Authorization from "./pages/modal/аuthorization/Authorization.jsx";
-import Posts from "./components/posts/Posts.jsx"
 import Post from "./pages/post/post.jsx";
 import { Routes, Route } from "react-router-dom";
 import { useSelector } from "react-redux";

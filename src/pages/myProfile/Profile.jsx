@@ -1,32 +1,17 @@
 import s from "./profile.module.scss";
 import React from "react";
-import views from "./../../assets/png/views.png";
 import { useDispatch, useSelector } from "react-redux";
-import { NavLink } from "react-router-dom";
-import { openPost } from "../../redux/posts/actionOpenPost";
-import { getPost } from "../../redux/posts/action";
-import { closeProfile } from "../../redux/profile/action";
-import { profileComments } from "../../redux/profile/action";
+import { switchToggleComments, switchTogglePosts } from "../../redux/profile/action";
 import { openProfile } from "../../redux/profile/action";
+import Posts from "./../../components/posts/Posts.jsx";
+import Comments from "../../components/comments/comments";
 
 const Profile = () => {
-  const data = useSelector((state) => state);
-  const comment = useSelector((state) => state.profile)
-  console.log(comment)
-  const [switchToggle, setSwtitchToggle] = React.useState(true);
-  const posts = data.post.items;
+  const toggleSwitcher = useSelector((state)=> state.profile.toggleSwitcher)
   const dispatch = useDispatch();
   React.useEffect(() => {
-    dispatch(getPost());
-    dispatch(openProfile())
+    dispatch(openProfile());
   }, []);
-  const togglePosts = () => {
-    setSwtitchToggle(true);
-  };
-  const toggleComments = () => {
-    setSwtitchToggle(false);
-    dispatch(profileComments());
-  };
   return (
     <>
       <div className={s.profile}>
@@ -39,9 +24,9 @@ const Profile = () => {
           <div className={s.profile__line}></div>
           <div className={s.profile__toggleContent}>
             <div
-              onClick={togglePosts}
+              onClick={()=>dispatch(switchTogglePosts())}
               className={
-                switchToggle
+                toggleSwitcher
                   ? `${s.profile__toggleArticle} ${s.active}`
                   : `${s.profile__toggleArticle}`
               }
@@ -49,9 +34,9 @@ const Profile = () => {
               Статьи
             </div>
             <div
-              onClick={toggleComments}
+              onClick={()=>dispatch(switchToggleComments())}
               className={
-                !switchToggle
+                !toggleSwitcher
                   ? `${s.profile__toggleComment} ${s.active}`
                   : `${s.profile__toggleComment}`
               }
@@ -60,52 +45,15 @@ const Profile = () => {
             </div>
           </div>
         </div>
-        {switchToggle ? (
+        {toggleSwitcher ? (
           <>
-            {(posts ?? []).map((post) => (
-              <NavLink
-                key={post._id}
-                to={`/post/${post._id}`}
-                style={{ textDecoration: "none" }}
-                onClick={() => dispatch(closeProfile())}
-              >
-                <div
-                  onClick={() => dispatch(openPost(post._id))}
-                  className={s.article}
-                >
-                  <div className={s.article__content}>
-                    <div className={s.article__textContent}>
-                      <div className={s.article__header}>{post.title}</div>
-                      <div className={s.article__discription}>
-                        {post.description}
-                      </div>
-                      <div className={s.article__dateContainer}>
-                        <div className={s.article__date}>{post.updatedAt}</div>
-                        <img className={s.article__viewsIcon} src={views} />
-                        <div className={s.article__views}>{post.views}</div>
-                      </div>
-                    </div>
-                    <div className={s.article__imgContent}>
-                      {post.photoUrl === "" ? (
-                        <div />
-                      ) : (
-                        <img className={s.article__img} src={post.photoUrl} />
-                      )}
-                    </div>
-                  </div>
-                </div>
-              </NavLink>
-            ))}
+            <Posts></Posts>
           </>
-        ):(comment.comments.items ?? []).map((comment) => (
-          <div key={comment._id} className={s.post__coment}>
-            <div className={s.post__headerComment}>
-              <div className={s.post__header}>{comment.user.fullName}</div>
-              <div className={s.post__date}>{comment.createdAt}</div>
-            </div>
-            <div className={s.post__text}>{comment.text}</div>
-          </div>
-        ))}
+        ) : (
+          <>
+            <Comments></Comments>
+          </>
+        )}
       </div>
     </>
   );

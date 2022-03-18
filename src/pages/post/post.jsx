@@ -4,7 +4,9 @@ import views from "./../../assets/png/views.png";
 import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { openPost } from "../../redux/posts/actionOpenPost";
-import { postComments, getComments } from "../../redux/comments/action";
+import { postComments} from "../../redux/comments/action";
+import { closeProfile } from "../../redux/profile/action";
+import Comments from "../../components/comments/comments";
 import ReactHtmlParser from "html-react-parser"
 
 const Post = () => {
@@ -13,13 +15,10 @@ const Post = () => {
   const { id } = useParams();
   const postResp = useSelector((state) => state);
   const post = postResp.open;
-  const textPost = post.text
-  console.log(textPost)
-  const comments = useSelector((state) => state.comments);
  
   React.useEffect(() => {
     dispatch(openPost(id));
-    dispatch(getComments(id));
+    dispatch(closeProfile())
   }, [id]);
 
   const postComment = async (text, id) => {
@@ -49,20 +48,7 @@ const Post = () => {
           <p className={s.post__text}>{post.text !== undefined ? ReactHtmlParser(post.text) : ""}</p>
         </div>
         <div className={s.post__commentsContainer}>
-          <div className={s.post__headerComments}>
-            <p className={s.post__header}>Комментарии ({ comments.response instanceof Array ? comments.response.length : "0"})</p>
-            <div className={s.post__quantity}></div>
-          </div>
-
-          {(comments.response ?? []).map((comment) => (
-            <div key={comment._id} className={s.post__coment}>
-              <div className={s.post__headerComment}>
-                <div className={s.post__header}>{comment.user.fullName}</div>
-                <div className={s.post__date}>{comment.createdAt}</div>
-              </div>
-              <div className={s.post__text}>{comment.text}</div>
-            </div>
-          ))}
+          <Comments></Comments>
           {window.localStorage.getItem("token") && (
             <div className={s.post_commentForm}>
               <p className={s.post_commentHeaderForm}>Добавить комментарий</p>

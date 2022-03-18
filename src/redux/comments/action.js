@@ -13,6 +13,15 @@ export const getComments = (id) => async (dispatch) => {
     }
 }
 
+export const getComment = () => async (dispatch) =>{
+    const response = await instance.get(`/comments`)
+    const commentsData = response.data
+    dispatch({
+        type:"GET_COMMENT",
+        payload:commentsData
+    })
+}
+
 export const postComments = (text,id) => async (dispatch) => {
     try {
         await instance.post("/comments",{

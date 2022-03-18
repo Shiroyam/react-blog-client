@@ -11,6 +11,18 @@ export const closeProfile = () => {
     }
 }
 
+export const switchToggleComments = () => {
+    return {
+        type:"OPEN_COMMENTS"
+    }
+}
+
+export const switchTogglePosts = () => {
+    return {
+        type:"OPEN_POSTS"
+    }
+}
+
 export const profileComments = () => async (dispatch) =>{
     try {
         const {data} = await instance.get('/comments')
@@ -22,4 +34,6 @@ export const profileComments = () => async (dispatch) =>{
         alert(error)
     }
 }
+
+
 

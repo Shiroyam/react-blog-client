@@ -5,21 +5,20 @@ import { useSelector, useDispatch } from "react-redux";
 import { getPost } from "../../redux/posts/action";
 import { openPost } from "../../redux/posts/actionOpenPost";
 import { NavLink } from "react-router-dom";
+import { switchTogglePosts } from "../../redux/profile/action";
 
 const Posts = () => {
     const dispatch = useDispatch();
-    const profile = useSelector((state) => state.profile.flag);
     const data = useSelector((state) => state);
     const posts = data.post.items;
 
     React.useEffect(() => {
         dispatch(getPost());
+        dispatch(switchTogglePosts())
       }, []);
 
   return (
     <>
-      {!profile && (
-        <>
           {(posts ?? []).map((post) => (
             <NavLink
               key={post._id}
@@ -52,9 +51,7 @@ const Posts = () => {
                 </div>
               </div>
             </NavLink>
-          ))}
-        </>
-      )}
+          ))}   
     </>
   );
 };

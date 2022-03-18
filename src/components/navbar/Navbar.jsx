@@ -108,7 +108,7 @@ const Navbar = () => {
             </div>
           </div>
         )}
-        <Posts></Posts>
+        {!profile && (<Posts></Posts>)}
         <Pogination></Pogination>
       </div>
     </>
