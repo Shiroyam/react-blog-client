@@ -9,6 +9,7 @@ import {authReducer} from "./authorization/reducer"
 import { regReducer } from "./registration/regReducer";
 import {commentsReducer} from "./comments/reducer"
 import { postCreateReducer } from "./createPost/reducer";
+import { editingReducer } from "./editing/reducer";
 
 const rootReducer = combineReducers({
   search:searchReducer,
@@ -19,6 +20,7 @@ const rootReducer = combineReducers({
   reg:regReducer,
   comments:commentsReducer,
   create:postCreateReducer,
+  editing:editingReducer
 });
 
 export const store = createStore(

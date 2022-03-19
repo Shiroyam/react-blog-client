@@ -14,9 +14,11 @@ const Pogination = () => {
   const dispatch = useDispatch();
   const page = useSelector((state) => state.post);
   const total = Math.ceil(page.total / 4);
+
   React.useEffect(() => {
-    dispatch(getPost(numberPage, values));
+    dispatch(getPost(numberPage , values));
   }, [values]);
+
   const poginationPostLeft = () => {
     if (numberPage > 1 && toggleSwitcher) {
       setNumberPage(numberPage - 1);

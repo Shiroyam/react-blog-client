@@ -71,6 +71,47 @@
           height: 130px;
         }
       }
+      .article__btn {
+        padding-top: 5px;
+        display: flex;
+        .article__btnRedact {
+          cursor: pointer;
+          margin-right: 10px;
+          width: 140px;
+          height: 30px;
+          font-family: "Inter";
+          font-style: normal;
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 19px;
+          text-align: center;
+          color: #68572d;
+
+          background: #ffdf36;
+          border-radius: 12px;
+          &:hover {
+            opacity: 0.5;
+          }
+        }
+        .article__btnDelet {
+          cursor: pointer;
+          width: 100px;
+          height: 30px;
+          font-family: "Inter";
+          font-style: normal;
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 19px;
+          text-align: center;
+          color: #68572d;
+
+          background: #ffdf36;
+          border-radius: 12px;
+          &:hover {
+            opacity: 0.5;
+          }
+        }
+      }
     }
   }
 }

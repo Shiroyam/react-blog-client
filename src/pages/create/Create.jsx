@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 import { createPost } from "../../redux/createPost/action";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
+import { getPost } from "../../redux/posts/action";
 
 const Create = () => {
   const dispatch = useDispatch()
@@ -12,6 +13,10 @@ const Create = () => {
   const [description, setDescription] = React.useState('')
   const [photoUrl, setPhotoUrl] = React.useState('https://tproger.ru/s3/uploads/2019/04/learn-programming-880x308.png')
   const [text, setText] = React.useState('')
+
+  React.useEffect(()=>{
+    dispatch(getPost(1, ""));
+  },[])
 
   const postPost = (title, photoUrl, description, text) => {
     dispatch(createPost(title, photoUrl, description,text ))

@@ -21,8 +21,10 @@ export const authorizationPost = (email, password) => async (dispatch) =>{
           })
           .then((response) => {
             const token = response.data.token;
+            const id = response.data._id;
             const name = response.data.fullName;
             localStorage.setItem("token", token);
+            localStorage.setItem("id", id);
             localStorage.setItem("name", name);
           });
           dispatch({
