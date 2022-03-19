@@ -1,24 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import s from "./navbar.module.scss";
 import searchIcon from "./../../assets/png/search.png";
 import userIcon from "./../../assets/png/user.png";
 import createIcon from "./../../assets/png/createPng.png";
 import closeSearchPng from "./../../assets/png/VectorcloseSerach.png";
-import Pogination from "./../pogination/Pogination"
+import Pogination from "./../pogination/Pogination";
 import Posts from "./../posts/Posts";
 import { useDispatch, useSelector } from "react-redux";
 import { closeProfile } from "../../redux/profile/action";
 import { closeSearch, openSearch } from "../../redux/search/action";
-import { openFormAuth} from "../../redux/authorization/action";
-import { Link} from "react-router-dom";
-
-
+import { openFormAuth } from "../../redux/authorization/action";
+import { Link } from "react-router-dom";
+import { valueInput } from "../../redux/search/action";
 
 const Navbar = () => {
   const flag = useSelector((state) => state.search.flag);
   const profile = useSelector((state) => state.profile.flag);
   const dispatch = useDispatch();
-  
   return (
     <>
       <div className={profile ? `${s.navbar}` : `${s.navbar} ${s.right}`}>
@@ -30,7 +28,7 @@ const Navbar = () => {
                 <>
                   {!profile && (
                     <img
-                      onClick={()=>dispatch(openSearch())}
+                      onClick={() => dispatch(openSearch())}
                       src={searchIcon}
                       className={s.menu__searchIcon}
                     ></img>
@@ -38,7 +36,7 @@ const Navbar = () => {
                   {localStorage.getItem("token") && (
                     <Link to="/createpage">
                       <img
-                        onClick={() =>dispatch(closeProfile())}
+                        onClick={() => dispatch(closeProfile())}
                         src={createIcon}
                         className={s.menu__createIcon}
                       ></img>
@@ -46,7 +44,7 @@ const Navbar = () => {
                   )}
                   {!localStorage.getItem("token") && (
                     <img
-                      onClick={()=>dispatch(openFormAuth())}
+                      onClick={() => dispatch(openFormAuth())}
                       src={userIcon}
                       className={s.menu__userIcon}
                     ></img>
@@ -58,9 +56,10 @@ const Navbar = () => {
                     className={s.menu__searchInput}
                     placeholder="Поиск статьи по заголовку или тексту..."
                     type="text"
+                    onChange={(e) => dispatch(valueInput(e.target.value))}
                   ></input>
                   <img
-                    onClick={()=>dispatch(closeSearch())}
+                    onClick={() => dispatch(closeSearch())}
                     className={s.menu__searchClose}
                     src={closeSearchPng}
                   />
@@ -76,7 +75,7 @@ const Navbar = () => {
                 <>
                   {!profile && (
                     <img
-                      onClick={()=>dispatch(openSearch())}
+                      onClick={() => dispatch(openSearch())}
                       src={searchIcon}
                       className={s.menu__searchIcon}
                     ></img>
@@ -84,7 +83,7 @@ const Navbar = () => {
                   {localStorage.getItem("token") && (
                     <Link to="/createpage">
                       <img
-                        onClick={() =>dispatch(closeProfile())}
+                        onClick={() => dispatch(closeProfile())}
                         src={createIcon}
                         className={s.menu__createIcon}
                       ></img>
@@ -99,7 +98,7 @@ const Navbar = () => {
                     type="text"
                   ></input>
                   <img
-                    onClick={()=>dispatch(closeSearch())}
+                    onClick={() => dispatch(closeSearch())}
                     className={s.menu__searchClose}
                     src={closeSearchPng}
                   />
@@ -108,8 +107,8 @@ const Navbar = () => {
             </div>
           </div>
         )}
-        {!profile && (<Posts></Posts>)}
-        {!profile && (<Pogination></Pogination>)} 
+        {!profile && <Posts></Posts>}
+        {!profile && <Pogination></Pogination>}
       </div>
     </>
   );

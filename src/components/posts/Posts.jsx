@@ -15,7 +15,7 @@ const Posts = () => {
     const posts = data.post.items;
     
     React.useEffect(() => {
-        dispatch(getPost());
+        dispatch(getPost(1, ''));
         dispatch(switchTogglePosts())
       }, []);
 
