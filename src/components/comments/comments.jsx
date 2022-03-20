@@ -6,25 +6,25 @@ import { useDispatch } from "react-redux";
 import { useForm } from "react-hook-form";
 
 const Comments = () => {
-  const [editingText, setEditingText] = React.useState('')
+  const [editingText, setEditingText] = React.useState("");
   const dispatch = useDispatch();
   const comments = useSelector((state) => state.comments);
   const toggleSwitcher = useSelector((state) => state.profile.toggleSwitcher);
   const {
     register,
-    formState: { errors},
+    formState: { errors },
     handleSubmit,
   } = useForm({
-    mode:"onBlur"
+    mode: "onBlur",
   });
   const clickBtnDelete = (id) => {
     dispatch(deleteComment(id));
     window.location.reload();
   };
-  
+
   const onChangeText = (data, id) => {
-    dispatch(editingComment(data, id))
-  }
+    dispatch(editingComment(data, id));
+  };
 
   return (
     <>
@@ -53,27 +53,38 @@ const Comments = () => {
         </div>
       ) : (
         <div className={s.post__commentsContainer}>
-          {(comments.comment.commentsData.items ?? []).map((comment) => (
-            <div key={comment._id} className={s.post__coment}>
-              <div className={s.post__headerComment}>
-                <div className={s.post__header}>{comment.user.fullName}</div>
-                <div className={s.post__date}>{comment.createdAt}</div>
-              </div>
+          {(comments.comment.commentsData.items ?? [])
+            .filter(
+              (comments) => comments.user._id === localStorage.getItem("id")
+            )
+            .map((comment) => (
+              <div key={comment._id} className={s.post__coment}>
+                <div className={s.post__headerComment}>
+                  <div className={s.post__header}>{comment.user.fullName}</div>
+                  <div className={s.post__date}>{comment.createdAt}</div>
+                </div>
                 <div className={s.post__text}>
-                  <textarea  onChange={(e)=>setEditingText(e.target.value)} className={s.post__textarea}>
-                  {comment.text}
+                  <textarea
+                    onChange={(e) => setEditingText(e.target.value)}
+                    className={s.post__textarea}
+                  >
+                    {comment.text}
                   </textarea>
                 </div>
-                <button onClick={()=>onChangeText(editingText,comment._id )} className={s.post__btnEditing}>Исправить</button>
+                <button
+                  onClick={() => onChangeText(editingText, comment._id)}
+                  className={s.post__btnEditing}
+                >
+                  Исправить
+                </button>
                 <button
                   onClick={() => clickBtnDelete(comment._id)}
                   className={s.post__btnDelet}
                 >
                   Удалить
-                
-             </button>
-            </div>
-          ))}
+                </button>
+              </div>
+            ))}
         </div>
       )}
     </>

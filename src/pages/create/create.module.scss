@@ -4,6 +4,14 @@
   padding-top: 100px;
   padding-left: 220px;
   .header {
+    &__context {
+      font-family: Inter;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 13px;
+      line-height: 100%;
+      color: red;
+    }
     &__input {
       width: 602px;
       height: 52px;
@@ -22,6 +30,14 @@
 
   .description {
     margin-top: 25px;
+    &__context {
+      font-family: Inter;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 13px;
+      line-height: 100%;
+      color: red;
+    }
     &__header {
       font-family: Inter;
       font-style: normal;
@@ -53,6 +69,14 @@
   }
 
   .formLink {
+    &__context {
+      font-family: Inter;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 13px;
+      line-height: 100%;
+      color: red;
+    }
     margin-top: 30px;
     display: flex;
     &__header {
@@ -113,6 +137,14 @@
   .textForm {
     margin-top: 30px;
     width: 602px;
+    &__context {
+      font-family: Inter;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 13px;
+      line-height: 100%;
+      color: red;
+    }
     &__header {
       font-family: Inter;
       font-style: normal;

@@ -22,7 +22,13 @@ const Create = () => {
   });
 
   const submitForm = (data) => {
-    id ? dispatch(editingPost(id, data)) : dispatch(createPost(data));
+    if(id){
+      dispatch(editingPost(id, data))
+      window.location.reload()
+    } else {
+      dispatch(createPost(data));
+      window.location.reload()
+    }
   };
 
   React.useEffect(() => {
@@ -51,6 +57,7 @@ const Create = () => {
           >
             {id && postResp.title}
           </textarea>
+          <div className={s.header__context}>{errors?.title && <p>{errors?.title?.message || "Error!"}</p>}</div>
         </div>
         <div className={s.description}>
           <div className={s.description__header}>Короткое описание</div>
@@ -62,7 +69,7 @@ const Create = () => {
                 message: "Нужно ввести минимум 6 символа!",
               },
               maxLength: {
-                value: 24,
+                value: 160,
                 message: "Вы ввели максимальное допустимое число символов",
               },
             })}
@@ -70,6 +77,7 @@ const Create = () => {
           >
             {id && postResp.description}
           </textarea>
+          <div className={s.description__context}>{errors?.description && <p>{errors?.description?.message || "Error!"}</p>}</div>
         </div>
         <div className={s.formLink}>
           <div className={s.formLink__container}>
@@ -87,6 +95,7 @@ const Create = () => {
             >
               {id && postResp.photoUrl}
             </textarea>
+            <div className={s.formLink__context}>{errors?.photoUrl && <p>{errors?.photoUrl?.message || "Error!"}</p>}</div>
           </div>
 
           <button className={s.formLink__button}>
@@ -108,6 +117,7 @@ const Create = () => {
           >
             {id && postResp.text}
           </textarea>
+          <div className={s.textForm__context}>{errors?.text && <p>{errors?.text?.message || "Error!"}</p>}</div>
         </div>
         {pathname == "/createPage" ? (
           <button type="submit" className={s.btnPost}>
