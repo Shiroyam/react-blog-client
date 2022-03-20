@@ -34,7 +34,7 @@ const Post = () => {
         className={s.post__headerContainer}
       >
         <div className={s.post__dateContainer}>
-          <div className={s.post__date}>{post.createdAt}</div>
+          <div className={s.post__date}>{post.updatedAt.slice(0,9)} в {post.updatedAt.slice(11,16)}</div>
           <div className={s.post__viewsContent}>
             <img className={s.post__viewsIcon} src={views}></img>
           <div className={s.post__views}>{post.views}</div>

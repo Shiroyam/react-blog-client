@@ -51,7 +51,10 @@ const Posts = () => {
                 <div className={s.article__header}>{post.title}</div>
                 <div className={s.article__discription}>{post.description}</div>
                 <div className={s.article__dateContainer}>
-                  <div className={s.article__date}>{post.updatedAt}</div>
+                  <div className={s.article__date}>
+                    {post.updatedAt.slice(0, 9)} в{" "}
+                    {post.updatedAt.slice(11, 16)}
+                  </div>
                   <img className={s.article__viewsIcon} src={views} />
                   <div className={s.article__views}>{post.views}</div>
                 </div>
