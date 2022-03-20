@@ -8,6 +8,10 @@ export const commentsReducer = (state =initState, action) => {
             return {...state, comment:action.payload}
         case"POST_COMMENTS":
             return state;    
+        case"DELETE_COMMENT":
+            return state;
+        case"EDITING_COMMENT":
+            return state;
         default:
             return state;
     }

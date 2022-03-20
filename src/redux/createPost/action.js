@@ -1,18 +1,34 @@
-import { instance } from "../../config/axios"
+import { instance } from "../../config/axios";
 
-export const createPost = (title, photoUrl, description,text ) => async (dispatch) => {
-    try {
-        await instance.post ("/posts",{
-        "title":title,
-        "text":text,
-        "description":description,
-        "photoUrl":photoUrl
-    })
-    } catch (error) {
-        alert(error)
-    }
-    
+export const editingPost = (id, data) => async (dispatch) => {
+  try {
+    await instance.patch(`/posts/${id}`, {
+      title: data.title,
+      text: data.text,
+      description: data.description,
+      photoUrl: data.photoUrl,
+    });
     dispatch({
-        type:"POST_CREATE"
+        type:"POST_EDITING"
     })
-}
+  } catch (error) {
+      console.log(error)
+  }
+};
+
+export const createPost = (data) => async (dispatch) => {
+  try {
+    await instance.post("/posts", {
+      title: data.title,
+      text: data.text,
+      description: data.description,
+      photoUrl: data.photoUrl,
+    });
+  } catch (error) {
+    alert(error);
+  }
+
+  dispatch({
+    type: "POST_CREATE",
+  });
+};

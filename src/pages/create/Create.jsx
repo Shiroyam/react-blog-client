@@ -1,62 +1,125 @@
 import React from "react";
 import s from "./create.module.scss";
 import loading from "./../../assets/png/GroupLoading.png";
-import { useDispatch } from "react-redux";
-import { createPost } from "../../redux/createPost/action";
-import { CKEditor } from "@ckeditor/ckeditor5-react";
-import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
+import { useForm } from "react-hook-form";
+import { useDispatch, useSelector } from "react-redux";
+import { createPost, editingPost } from "../../redux/createPost/action";
 import { getPost } from "../../redux/posts/action";
+import { useParams } from "react-router-dom";
 
 const Create = () => {
-  const dispatch = useDispatch()
-  const [title, setTitle] = React.useState('')
-  const [description, setDescription] = React.useState('')
-  const [photoUrl, setPhotoUrl] = React.useState('https://tproger.ru/s3/uploads/2019/04/learn-programming-880x308.png')
-  const [text, setText] = React.useState('')
+  const dispatch = useDispatch();
+  const { id } = useParams();
+  const { pathname } = window.location;
+  const postResp = useSelector((state) => state.open);
 
-  React.useEffect(()=>{
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+  } = useForm({
+    mode: "onBlur",
+  });
+
+  const submitForm = (data) => {
+    id ? dispatch(editingPost(id, data)) : dispatch(createPost(data));
+  };
+
+  React.useEffect(() => {
     dispatch(getPost(1, ""));
-  },[])
-
-  const postPost = (title, photoUrl, description, text) => {
-    dispatch(createPost(title, photoUrl, description,text ))
-    window.location.reload()
-  }
-
-  const handelChange = (e,editor) => {
-    const data = editor.getData()
-    setText(data)
-  }
+  }, [id]);
 
   return (
-    <div className={s.create}>
-      <div className={s.header}>
-        <input
-          className={s.header__input}
-          placeholder="Введите заголовок..."
-          type="text"
-          value={title}
-          onChange={(e)=>setTitle(e.target.value)}
-        />
+    <form onSubmit={handleSubmit(submitForm)}>
+      <div className={s.create}>
+        <div className={s.header}>
+          <textarea
+            className={s.header__input}
+            placeholder="Введите заголовок..."
+            {...register("title", {
+              required: "Поле обязательно!",
+              minLength: {
+                value: 6,
+                message: "Нужно ввести минимум 6 символа!",
+              },
+              maxLength: {
+                value: 28,
+                message: "Вы ввели максимальное допустимое число символов",
+              },
+            })}
+            type="text"
+          >
+            {id && postResp.title}
+          </textarea>
+        </div>
+        <div className={s.description}>
+          <div className={s.description__header}>Короткое описание</div>
+          <textarea
+            {...register("description", {
+              required: "Поле обязательно!",
+              minLength: {
+                value: 6,
+                message: "Нужно ввести минимум 6 символа!",
+              },
+              maxLength: {
+                value: 24,
+                message: "Вы ввели максимальное допустимое число символов",
+              },
+            })}
+            className={s.description__input}
+          >
+            {id && postResp.description}
+          </textarea>
+        </div>
+        <div className={s.formLink}>
+          <div className={s.formLink__container}>
+            <div className={s.formLink__header}>Ссылка на изображение:</div>
+            <textarea
+              type="text"
+              className={s.formLink__form}
+              {...register("photoUrl", {
+                required: "Поле обязательно!",
+                minLength: {
+                  value: 6,
+                  message: "Нужно ввести минимум 6 символа!",
+                },
+              })}
+            >
+              {id && postResp.photoUrl}
+            </textarea>
+          </div>
+
+          <button className={s.formLink__button}>
+            <img src={loading} width={16} className={s.formLink__icon}></img>
+            Загрузить
+          </button>
+        </div>
+        <div className={s.textForm}>
+          <div className={s.textForm__header}>Полное описание</div>
+          <textarea
+            {...register("text", {
+              required: "Поле обязательно!",
+              minLength: {
+                value: 6,
+                message: "Нужно ввести минимум 6 символа!",
+              },
+            })}
+            className={s.textForm__text}
+          >
+            {id && postResp.text}
+          </textarea>
+        </div>
+        {pathname == "/createPage" ? (
+          <button type="submit" className={s.btnPost}>
+            Опубликовать
+          </button>
+        ) : (
+          <button type="submit" className={s.btnPost}>
+            Изменить
+          </button>
+        )}
       </div>
-      <div className={s.description}>
-        <div className={s.description__header}>Короткое описание</div>
-        <textarea value={description} onChange={(e)=>setDescription(e.target.value)} className={s.description__input}></textarea>
-      </div>
-      <div className={s.formLink}>
-        <div className={s.formLink__header}>Ссылка на изображение:</div>
-        <input type="text" className={s.formLink__form} />
-        <button className={s.formLink__button}>
-          <img src={loading} width={16} className={s.formLink__icon}></img>
-          Загрузить
-        </button>
-      </div>
-      <div className={s.textForm}>
-        <div className={s.textForm__header}>Полное описание</div>
-        <CKEditor data={text} onChange={handelChange} className={s.textForm__text} editor={ClassicEditor} />
-      </div>
-      <button onClick={()=>postPost(title, photoUrl, description, text)} className={s.btnPost}>Опубликовать</button>
-    </div>
+    </form>
   );
 };
 

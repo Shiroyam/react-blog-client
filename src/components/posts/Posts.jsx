@@ -7,6 +7,7 @@ import { openPost } from "../../redux/posts/actionOpenPost";
 import { NavLink, Link } from "react-router-dom";
 import { switchTogglePosts } from "../../redux/profile/action";
 import { deletePost } from "../../redux/editing/action";
+import { closeProfile } from "../../redux/profile/action";
 
 const Posts = () => {
   const { pathname } = window.location;
@@ -15,15 +16,20 @@ const Posts = () => {
   const data = useSelector((state) => state);
   const posts = data.post.items;
 
+  const ClickBtnEditing = (id) => {
+    dispatch(openPost(id));
+    dispatch(closeProfile());
+  };
+
   const ClickBtnDelet = (id) => {
-      dispatch(deletePost(id))
-      window.location.reload()
-  }
+    dispatch(deletePost(id));
+    window.location.reload();
+  };
 
   React.useEffect(() => {
     dispatch(getPost(1, ""));
     dispatch(switchTogglePosts());
-  }, []);
+  }, [id]);
 
   return (
     <>
@@ -50,16 +56,28 @@ const Posts = () => {
                   <div className={s.article__views}>{post.views}</div>
                 </div>
                 {localStorage.getItem("id") == post.user._id && (
-                  <div className={s.article__btn}>
-                    <Link to="/" >
-                      <button  className={s.article__btnRedact}>
-                        Редактировать
-                      </button>
-                    </Link>
-                    <Link to="/">
-                      <button onClick={()=>ClickBtnDelet(post._id)} className={s.article__btnDelet}>Удалить</button>
-                    </Link>
-                  </div>
+                  <>
+                    {pathname == "/profile" && (
+                      <>
+                        <div className={s.article__btn}>
+                          <Link to={`/createpage/editing/${post._id}`}>
+                            <button
+                              onClick={() => ClickBtnEditing(post._id)}
+                              className={s.article__btnRedact}
+                            >
+                              Редактировать
+                            </button>
+                          </Link>
+                          <button
+                            onClick={() => ClickBtnDelet(post._id)}
+                            className={s.article__btnDelet}
+                          >
+                            Удалить
+                          </button>
+                        </div>
+                      </>
+                    )}{" "}
+                  </>
                 )}
               </div>
               <div className={s.article__imgContent}>

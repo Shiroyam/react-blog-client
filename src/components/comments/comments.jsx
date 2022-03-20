@@ -1,9 +1,30 @@
 import s from "./comments.module.scss";
 import React from "react";
 import { useSelector } from "react-redux";
+import { deleteComment, editingComment } from "../../redux/comments/action";
+import { useDispatch } from "react-redux";
+import { useForm } from "react-hook-form";
+
 const Comments = () => {
+  const [editingText, setEditingText] = React.useState('')
+  const dispatch = useDispatch();
   const comments = useSelector((state) => state.comments);
   const toggleSwitcher = useSelector((state) => state.profile.toggleSwitcher);
+  const {
+    register,
+    formState: { errors},
+    handleSubmit,
+  } = useForm({
+    mode:"onBlur"
+  });
+  const clickBtnDelete = (id) => {
+    dispatch(deleteComment(id));
+    window.location.reload();
+  };
+  
+  const onChangeText = (data, id) => {
+    dispatch(editingComment(data, id))
+  }
 
   return (
     <>
@@ -38,7 +59,19 @@ const Comments = () => {
                 <div className={s.post__header}>{comment.user.fullName}</div>
                 <div className={s.post__date}>{comment.createdAt}</div>
               </div>
-              <div className={s.post__text}>{comment.text}</div>
+                <div className={s.post__text}>
+                  <textarea  onChange={(e)=>setEditingText(e.target.value)} className={s.post__textarea}>
+                  {comment.text}
+                  </textarea>
+                </div>
+                <button onClick={()=>onChangeText(editingText,comment._id )} className={s.post__btnEditing}>Исправить</button>
+                <button
+                  onClick={() => clickBtnDelete(comment._id)}
+                  className={s.post__btnDelet}
+                >
+                  Удалить
+                
+             </button>
             </div>
           ))}
         </div>

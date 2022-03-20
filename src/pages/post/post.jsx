@@ -7,7 +7,6 @@ import { openPost } from "../../redux/posts/actionOpenPost";
 import { postComments} from "../../redux/comments/action";
 import { closeProfile } from "../../redux/profile/action";
 import Comments from "../../components/comments/comments";
-import ReactHtmlParser from "html-react-parser"
 import { getComments } from "../../redux/comments/action";
 
 const Post = () => {
@@ -47,7 +46,7 @@ const Post = () => {
       </div>
       <div className={s.post__content}>
         <div className={s.post__textContainer}>
-          <p className={s.post__text}>{post.text !== undefined ? ReactHtmlParser(post.text) : ""}</p>
+          <p className={s.post__text}>{post.text !== undefined ? post.text : ""}</p>
         </div>
         <div className={s.post__commentsContainer}>
           <Comments></Comments>

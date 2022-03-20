@@ -1,5 +1,29 @@
 import { instance } from "../../config/axios"
 
+export const editingComment = (data,id) => async (dispatch) => {
+    try {
+        await instance.patch(`/comments/${id}`,{
+            "text": data
+        })
+        dispatch({
+            type:"EDITING_COMMENT"
+        })
+    } catch (error) {
+        alert("Вы не обновили текст!")
+    }
+}
+
+export const deleteComment = (id) => async (dispatch) => {
+    try {
+       await instance.delete(`comments/${id}`)
+       dispatch({
+           type:"DELETE_COMMENT"
+       })
+    } catch (error) {
+        console.log(error)
+    }
+}
+
 export const getComments = (id) => async (dispatch) => {
     try {
         const response = await instance.get(`/comments/post/${id}`)
@@ -25,7 +49,6 @@ export const getComment = (num) => async (dispatch) =>{
     } catch (error) {
         alert(error)
     }
-   
    
 }
 

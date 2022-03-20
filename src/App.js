@@ -8,7 +8,7 @@ import Registration from "./pages/modal/registration/Registration.jsx";
 import Authorization from "./pages/modal/аuthorization/Authorization.jsx";
 import Post from "./pages/post/post.jsx";
 import { Routes, Route } from "react-router-dom";
-import { useSelector} from "react-redux";
+import { useSelector } from "react-redux";
 
 function App() {
   const flagAuth = useSelector((state) => state.auth.flagAuth);
@@ -22,7 +22,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/post/:id" element={<Post />} />
-        <Route path="/createpage" element={<Create />} />
+        <Route path="/createpage/" element={<Create />} />
+        <Route path="/createpage/:edit/:id" element={<Create />} />
         <Route path="/profile" element={<Profile />} />
       </Routes>
     </>

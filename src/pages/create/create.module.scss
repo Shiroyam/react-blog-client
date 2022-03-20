@@ -16,6 +16,7 @@
       color: #d7d7d7;
       border: none;
       outline: none;
+      resize: none;
     }
   }
 
@@ -53,6 +54,7 @@
 
   .formLink {
     margin-top: 30px;
+    display: flex;
     &__header {
       font-family: Inter;
       font-style: normal;
@@ -65,6 +67,7 @@
     &__form {
       width: 442px;
       height: 45px;
+      resize: none;
 
       outline: none;
       background: #ffffff;
@@ -83,6 +86,7 @@
     }
 
     &__button {
+      margin-top: 30px;
       width: 145px;
       height: 45px;
       margin-left: 15px;
@@ -109,7 +113,6 @@
   .textForm {
     margin-top: 30px;
     width: 602px;
-
     &__header {
       font-family: Inter;
       font-style: normal;
@@ -118,6 +121,24 @@
       line-height: 24px;
       color: #0a3465;
       padding-bottom: 9px;
+    }
+    &__text {
+      width: 602px;
+      height: 350px;
+      border: 1px solid #eceef1;
+      box-sizing: border-box;
+      border-radius: 10px;
+      outline: none;
+      padding-left: 5px;
+      padding-right: 5px;
+
+      font-family: Inter;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 28px;
+      color: #000000;
+      resize: none;
     }
   }
   .btnPost {
