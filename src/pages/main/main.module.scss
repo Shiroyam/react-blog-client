@@ -3,8 +3,8 @@
   padding-top: 70px;
   padding-left: 220px;
   width: 1037px;
-  &__headerContent {
-    .main__header {
+  .headerContent {
+    &__header {
       font-family: Inter;
       font-style: normal;
       font-weight: 800;
@@ -12,7 +12,7 @@
       line-height: 52px;
       padding-bottom: 15px;
     }
-    .main__description {
+    &__description {
       font-family: Inter;
       font-style: normal;
       font-weight: 500;
@@ -22,8 +22,8 @@
       margin-bottom: 23px;
     }
   }
-  &__content {
-    .main__about {
+  .content {
+    &__about {
       font-family: Inter;
       font-style: normal;
       font-weight: bold;
@@ -31,7 +31,7 @@
       line-height: 52px;
       color: #202020;
     }
-    .main__text {
+    &__text {
       width: 584px;
       font-family: Inter;
       font-style: normal;

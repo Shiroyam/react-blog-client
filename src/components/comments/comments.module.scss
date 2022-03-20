@@ -1,8 +1,7 @@
-.post__commentsContainer {
+.post {
   padding-right: 470px;
-  .post__headerComments {
-    .post__header {
-      padding-bottom: 60px;
+  .headerContainer {
+    &__header {
       font-family: "Inter";
       font-style: normal;
       font-weight: 600;
@@ -11,15 +10,15 @@
       color: #0a3465;
     }
   }
-  .post__coment {
+  .coment {
     margin-top: 37px;
     padding-top: 5px;
     width: 35vw;
     border-bottom: 1px solid #f1f1f1;
-    .post__headerComment {
+    .headerContainer {
       display: flex;
       justify-content: space-between;
-      .post__header {
+      &__header {
         font-family: "Inter";
         font-style: normal;
         font-weight: 700;
@@ -27,7 +26,7 @@
         line-height: 18px;
         color: #373737;
       }
-      .post__date {
+      &__date {
         font-family: "IBM Plex Sans";
         font-style: normal;
         font-weight: 400;
@@ -38,7 +37,7 @@
         color: #c1c1c1;
       }
     }
-    .post__text {
+    .text {
       font-family: "Inter";
       font-style: normal;
       font-weight: 400;
@@ -47,7 +46,7 @@
       color: #373737;
       padding-top: 10px;
 
-      .post__textarea {
+      &__textarea {
         width: 700px;
         resize: none;
         outline: none;
@@ -55,7 +54,7 @@
         border: 1px solid #f1f1f1;
       }
     }
-    .post__btnEditing {
+    .btnEditing {
       padding: 5px;
       margin-right: 5px;
       cursor: pointer;
@@ -70,7 +69,7 @@
         opacity: 0.6;
       }
     }
-    .post__btnDelet {
+    .btnDelet {
       padding: 5px;
       cursor: pointer;
       font-family: "Inter";

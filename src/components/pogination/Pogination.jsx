@@ -16,7 +16,7 @@ const Pogination = () => {
   const total = Math.ceil(page.total / 4);
 
   React.useEffect(() => {
-    dispatch(getPost(numberPage , values));
+    dispatch(getPost(numberPage, values));
   }, [values]);
 
   const poginationPostLeft = () => {
@@ -42,21 +42,21 @@ const Pogination = () => {
   return (
     <>
       <div className={s.pogination}>
-        <div className={s.pogination__btnContainer}>
+        <div className={s.btnContainer}>
           <button
             onClick={poginationPostLeft}
-            className={s.pogination__btnLeft}
+            className={s.btnContainer__btnLeft}
           >
             <img src={arrowLeft}></img>
           </button>
           <button
             onClick={poginationPostRight}
-            className={s.pogination__btnRight}
+            className={s.btnContainer__btnRight}
           >
             <img src={arrowRight}></img>
           </button>
         </div>
-        <div className={s.pogination__numberPage}>
+        <div className={s.numberPage}>
           {toggleSwitcher ? `Страница ${numberPage} из ${total}` : ``}
         </div>
       </div>

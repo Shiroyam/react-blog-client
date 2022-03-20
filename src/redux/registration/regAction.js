@@ -11,17 +11,18 @@ export const closeFormReg = () => {
   };
 };
 
-export const registrationPost = (fullName, email, password) => async (dispatch) => {
+export const registrationPost = (data) => async (dispatch) => {
   try {
      await instance.post("/auth/register", {
-      fullName: fullName,
-      email: email,
-      password: password,
+      fullName: data.name,
+      email: data.email,
+      password: data.password,
     });
     dispatch({
         type:"POST_REG",
     })
+    alert("Поздравляем!Вы успешно создали аккаунт. Теперь вы можете зайти в него")
   } catch (error) {
-    alert(error);
+    alert("Что-то пошло не так!");
   }
 };

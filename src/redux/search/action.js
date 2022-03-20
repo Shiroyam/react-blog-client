@@ -10,7 +10,7 @@ export const closeSearch = () => {
   };
 };
 
-export const valueInput = (text) => {
+export const valueSearch = (text) => {
   return {
     type: "VALUE_INPUT",
     payload: text,

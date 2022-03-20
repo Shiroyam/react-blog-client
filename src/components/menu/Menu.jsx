@@ -12,9 +12,9 @@ import { Link, NavLink } from "react-router-dom";
 const Menu = () => {
   const [openCloseMenu, setOpenCloseMenu] = React.useState(false);
   const clickMenu = () => {
-    setOpenCloseMenu(true) 
-    dispatch(closeSearch())
-  }
+    setOpenCloseMenu(true);
+    dispatch(closeSearch());
+  };
   const dispatch = useDispatch();
 
   const clearLocalStorage = () => {
@@ -27,95 +27,94 @@ const Menu = () => {
       <div className="menu">
         {openCloseMenu ? (
           <>
-          <div className="menuOpen">
-            {localStorage.getItem("token") ? (
-              <>
-                <div className="menuOpen__header">
-                  <div className="menuOpen__name">
-                    {window.localStorage.getItem("name")}
+            <div className="menuOpen">
+              {localStorage.getItem("token") ? (
+                <>
+                  <div className="header">
+                    <div className="header__name">
+                      {window.localStorage.getItem("name")}
+                    </div>
                   </div>
-                </div>
-                <div className="menuOpen__nav">
+                  <div className="nav">
+                    <NavLink
+                      onClick={() => dispatch(closeProfile())}
+                      className="nav__main"
+                      style={{ textDecoration: "none" }}
+                      to="/"
+                    >
+                      Главная
+                    </NavLink>
+                    <NavLink
+                      onClick={() => dispatch(openProfile())}
+                      className="nav__myProfile"
+                      style={{ textDecoration: "none" }}
+                      to="/profile"
+                    >
+                      Мой профиль
+                    </NavLink>
+                    <NavLink
+                      onClick={() => dispatch(closeProfile())}
+                      className="nav__createPage"
+                      style={{ textDecoration: "none" }}
+                      to="/createPage"
+                    >
+                      Создать запись
+                    </NavLink>
+                    <div
+                      onClick={clearLocalStorage}
+                      className="nav__exit"
+                      style={{ textDecoration: "none" }}
+                    >
+                      Выйти
+                    </div>
+                  </div>
+                </>
+              ) : (
+                <div className="nav">
                   <NavLink
                     onClick={() => dispatch(closeProfile())}
-                    className="menuOpen__main"
+                    className="nav__main"
                     style={{ textDecoration: "none" }}
                     to="/"
                   >
                     Главная
                   </NavLink>
-                  <NavLink
-                    onClick={() => dispatch(openProfile())}
-                    className="menuOpen__myProfile"
-                    style={{ textDecoration: "none" }}
-                    to="/profile"
-                  >
-                    Мой профиль
-                  </NavLink>
-                  <NavLink
-                    onClick={() => dispatch(closeProfile())}
-                    className="menuOpen__createPage"
-                    style={{ textDecoration: "none" }}
-                    to="/createPage"
-                  >
-                    Создать запись
-                  </NavLink>
                   <div
-                    onClick={clearLocalStorage}
-                    className="menuOpen__exit"
+                    onClick={() => dispatch(openFormReg())}
+                    className="nav__main"
                     style={{ textDecoration: "none" }}
                   >
-                    Выйти
+                    Зарегистрироваться?
                   </div>
+                  <Link
+                    to="/"
+                    onClick={() => dispatch(openFormAuth())}
+                    className="nav__main"
+                    style={{ textDecoration: "none" }}
+                  >
+                    Войти
+                  </Link>
                 </div>
-              </>
-            ) : (
-              <div className="menuOpen__nav">
-                
-                <NavLink
-                  onClick={() => dispatch(closeProfile())}
-                  className="menuOpen__main"
-                  style={{ textDecoration: "none" }}
-                  to="/"
-                >
-                  Главная
-                </NavLink>
-                <div
-                  onClick={() => dispatch(openFormReg())}
-                  className="menuOpen__main"
-                  style={{ textDecoration: "none" }}
-                >
-                  Зарегистрироваться?
+              )}
+              <div className="closeMenu">
+                <div className="content">
+                  <img
+                    onClick={() => setOpenCloseMenu(false)}
+                    src={closeSearchPng}
+                    className="content__closeIcon"
+                  />
+                  <div className="content__menu">Меню</div>
                 </div>
-                <Link
-                  to="/"
-                  onClick={() => dispatch(openFormAuth())}
-                  className="menuOpen__main"
-                  style={{ textDecoration: "none" }}
-                >
-                  Войти
-                </Link>
-              </div>
-            )}
-            <div className="menuOpen__closeMenu">
-              <div className="menuOpen__content">
-                <img
-                  onClick={() => setOpenCloseMenu(false)}
-                  src={closeSearchPng}
-                  className="menuOpen__closeIcon"
-                />
-                <div className="menuOpen__menu">Меню</div>
               </div>
             </div>
-          </div>
           </>
         ) : (
-          <div className="menu__content">
-            <div className="menu__header">Меню</div>
+          <div className="content">
+            <div className="content__header">Меню</div>
             <div>
               <img
                 onClick={clickMenu}
-                className="menu__icon"
+                className="content__icon"
                 src={menuIcon}
               ></img>
             </div>

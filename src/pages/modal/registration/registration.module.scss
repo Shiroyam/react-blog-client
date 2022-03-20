@@ -10,15 +10,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  &__modal {
+  .modal {
     width: 446px;
     height: 550px;
     background: #ffffff;
     border-radius: 12px;
-    .registration__inputName {
+    .inputName {
       margin-top: 36px;
       margin-left: 40px;
-      .registration__context {
+      &__context {
         padding-top: 2px;
         font-family: Inter;
         font-style: normal;
@@ -28,7 +28,7 @@
         color: red;
         padding-bottom: 8px;
       }
-      .registration__header {
+      &__header {
         font-family: Inter;
         font-style: normal;
         font-weight: 600;
@@ -37,7 +37,7 @@
         color: #373737;
         padding-bottom: 8px;
       }
-      .registration__input {
+      &__input {
         width: 366px;
         height: 48px;
         border: 1px solid #eeeeee;
@@ -47,10 +47,10 @@
         padding-left: 5px;
       }
     }
-    .registration__inputEmail {
+    .inputEmail {
       margin-top: 36px;
       margin-left: 40px;
-      .registration__context {
+      &__context {
         padding-top: 2px;
         font-family: Inter;
         font-style: normal;
@@ -60,7 +60,7 @@
         color: red;
         padding-bottom: 8px;
       }
-      .registration__header {
+      &__header {
         font-family: Inter;
         font-style: normal;
         font-weight: 600;
@@ -69,7 +69,7 @@
         color: #373737;
         padding-bottom: 8px;
       }
-      .registration__input {
+      &__input {
         width: 366px;
         height: 48px;
         border: 1px solid #eeeeee;
@@ -79,10 +79,10 @@
         padding-left: 5px;
       }
     }
-    .registration__inputPassword {
+    .inputPassword {
       margin-top: 36px;
       margin-left: 40px;
-      .registration__context {
+      &__context {
         padding-top: 2px;
         font-family: Inter;
         font-style: normal;
@@ -92,7 +92,7 @@
         color: red;
         padding-bottom: 8px;
       }
-      .registration__header {
+      &__header {
         font-family: Inter;
         font-style: normal;
         font-weight: 600;
@@ -101,7 +101,7 @@
         color: #373737;
         padding-bottom: 8px;
       }
-      .registration__input {
+      &__input {
         width: 366px;
         height: 48px;
         border: 1px solid #eeeeee;
@@ -111,13 +111,13 @@
         padding-left: 5px;
       }
     }
-    .registration__headerContent {
+    .headerContent {
       padding-left: 40px;
       padding-right: 40px;
       padding-top: 30px;
       display: flex;
       justify-content: space-between;
-      .registration__header {
+      &__header {
         font-family: Inter;
         font-style: normal;
         font-weight: bold;
@@ -125,7 +125,7 @@
         line-height: 110%;
         letter-spacing: -0.5px;
       }
-      .registration__iconClose {
+      &__iconClose {
         width: 16px;
         height: 16px;
         cursor: pointer;

@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100&family=Inter:wght@400;500;600;800&family=Nunito:wght@800&display=swap");
 .post {
-  &__headerContainer {
+  .headerContainer {
     width: 50vw;
     height: 40vh;
     padding-top: 30px;
@@ -18,7 +18,7 @@
       background-color: rgba(0, 0, 0, 0.5);
       z-index: 1;
     }
-    .post__dateContainer {
+    .dateContainer {
       padding-top: 9px;
       position: relative;
       z-index: 1;
@@ -31,10 +31,10 @@
       text-transform: uppercase;
       color: #c1c1c1;
       display: flex;
-      .post__viewsContent {
+      .viewsContent {
         padding-left: 21px;
         display: flex;
-        .post__viewsIcon {
+        &__viewsIcon {
           margin-top: 3px;
           padding-right: 2px;
           width: 16px;
@@ -42,7 +42,7 @@
         }
       }
     }
-    .post__header {
+    &__header {
       position: relative;
       z-index: 1;
       width: 576px;
@@ -53,7 +53,7 @@
       line-height: 52px;
       color: #ffffff;
     }
-    .post_discription {
+    &__discription {
       position: relative;
       z-index: 1;
       width: 590px;
@@ -66,11 +66,11 @@
       color: rgba(255, 255, 255, 0.7);
     }
   }
-  &__content {
+  .content {
     margin-left: 72px;
-    .post__textContainer {
+    .textContainer {
       margin-top: 37px;
-      .post__text {
+      &__text {
         width: 35vw;
         font-family: "Inter";
         font-style: normal;
@@ -80,12 +80,12 @@
         color: #000000;
       }
     }
-    .post__commentsContainer {
+    .commentsContainer {
       padding-top: 60px;
       padding-right: 470px;
 
-      .post__headerComments {
-        .post__header {
+      .headerComments {
+        &__header {
           font-family: "Inter";
           font-style: normal;
           font-weight: 600;
@@ -94,15 +94,15 @@
           color: #0a3465;
         }
       }
-      .post__coment {
+      .coment {
         margin-top: 37px;
         padding-top: 5px;
         width: 35vw;
         height: 80px;
-        .post__headerComment {
+        .headerComment {
           display: flex;
           justify-content: space-between;
-          .post__header {
+          &__header {
             font-family: "Inter";
             font-style: normal;
             font-weight: 700;
@@ -110,7 +110,7 @@
             line-height: 18px;
             color: #373737;
           }
-          .post__date {
+          &__date {
             font-family: "IBM Plex Sans";
             font-style: normal;
             font-weight: 400;
@@ -121,7 +121,7 @@
             color: #c1c1c1;
           }
         }
-        .post__text {
+        .text {
           font-family: "Inter";
           font-style: normal;
           font-weight: 400;
@@ -133,11 +133,11 @@
           padding-bottom: 20px;
         }
       }
-      .post_commentForm {
+      .commentForm {
         padding-top: 48px;
         width: 35vw;
 
-        .post_commentHeaderForm {
+        &__commentHeaderForm {
           padding-bottom: 7px;
           font-family: "Inter";
           font-style: normal;
@@ -146,7 +146,7 @@
           line-height: 24px;
           color: #0a3465;
         }
-        .post_commentTextForm {
+        &__commentTextForm {
           width: 35vw;
           height: 90px;
           background: #ffffff;
@@ -165,7 +165,7 @@
           line-height: 22px;
           color: #373737;
         }
-        .post__btnForm {
+        &__btnForm {
           cursor: pointer;
           width: 130px;
           height: 45px;
@@ -175,10 +175,10 @@
             opacity: 0.8;
           }
         }
-        .post_btnContainer {
+        .btnContainer {
           display: flex;
           justify-content: flex-end;
-          .post__btnForm {
+          &__btnForm {
             margin-top: 22px;
             margin-bottom: 20px;
             font-family: "Inter";

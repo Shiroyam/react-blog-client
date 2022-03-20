@@ -5,11 +5,11 @@
 
 .navbar {
   width: 45.34vw;
-  &__content__open {
+  .contentOpen {
     width: 93vw;
     display: flex;
     justify-content: space-between;
-    .navbar__header {
+    &__header {
       padding-top: 21px;
       padding-left: 29px;
       font-family: Inter;
@@ -19,16 +19,16 @@
       line-height: 24px;
       color: #0a3465;
     }
-    .menu__icon {
+    .icon {
       padding-right: 29px;
-      .menu__searchClose {
+      &__searchClose {
         margin-left: 700px;
         margin-top: 25px;
         cursor: pointer;
         position: relative;
       }
 
-      .menu__searchInput {
+      &__searchInput {
         position: absolute;
         outline: none;
         padding-left: 29px;
@@ -44,7 +44,7 @@
         width: 650px;
         height: 67px;
       }
-      .menu__searchIcon {
+      &__searchIcon {
         padding-top: 21px;
         cursor: pointer;
         margin-right: 26px;
@@ -52,7 +52,7 @@
           opacity: 0.5;
         }
       }
-      .menu__createIcon {
+      &__createIcon {
         padding-top: 21px;
         margin-right: 26px;
         cursor: pointer;
@@ -60,7 +60,7 @@
           opacity: 0.5;
         }
       }
-      .menu__userIcon {
+      &__userIcon {
         padding-top: 21px;
         cursor: pointer;
         &:hover {
@@ -70,13 +70,13 @@
     }
   }
 
-  &__content {
+  .content {
     border-bottom: 1px solid #f9f9f9;
     border-left: 1px solid #f9f9f9;
     height: 67px;
     display: flex;
     justify-content: space-between;
-    .navbar__header {
+    &__header {
       padding-top: 21px;
       padding-left: 29px;
       font-family: Inter;
@@ -86,16 +86,16 @@
       line-height: 24px;
       color: #0a3465;
     }
-    .menu__icon {
+    .icon {
       padding-right: 5vw;
-      .menu__searchClose {
+      &__searchClose {
         margin-left: 700px;
         margin-top: 25px;
         cursor: pointer;
         position: relative;
       }
 
-      .menu__searchInput {
+      &__searchInput {
         position: absolute;
         outline: none;
         padding-left: 29px;
@@ -111,7 +111,7 @@
         width: 33.5vw;
         height: 67px;
       }
-      .menu__searchIcon {
+      &__searchIcon {
         padding-top: 21px;
         cursor: pointer;
         margin-right: 26px;
@@ -119,7 +119,7 @@
           opacity: 0.5;
         }
       }
-      .menu__createIcon {
+      &__createIcon {
         padding-top: 21px;
         margin-right: 26px;
         cursor: pointer;
@@ -127,7 +127,7 @@
           opacity: 0.5;
         }
       }
-      .menu__userIcon {
+      &__userIcon {
         padding-top: 21px;
         margin-right: 26px;
         cursor: pointer;

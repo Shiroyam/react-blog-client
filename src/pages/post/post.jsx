@@ -4,9 +4,9 @@ import views from "./../../assets/png/views.png";
 import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { openPost } from "../../redux/posts/actionOpenPost";
-import { postComments} from "../../redux/comments/action";
+import { postComments } from "../../redux/comments/action";
 import { closeProfile } from "../../redux/profile/action";
-import Comments from "../../components/comments/comments";
+import Comments from "../../components/comments/Comments";
 import { getComments } from "../../redux/comments/action";
 
 const Post = () => {
@@ -15,11 +15,11 @@ const Post = () => {
   const { id } = useParams();
   const postResp = useSelector((state) => state);
   const post = postResp.open;
- 
+
   React.useEffect(() => {
     dispatch(openPost(id));
-    dispatch(getComments(id))
-    dispatch(closeProfile())
+    dispatch(getComments(id));
+    dispatch(closeProfile());
   }, [id]);
 
   const postComment = async (text, id) => {
@@ -31,38 +31,44 @@ const Post = () => {
     <div className={s.post}>
       <div
         style={{ backgroundImage: `url(${post.photoUrl})` }}
-        className={s.post__headerContainer}
+        className={s.headerContainer}
       >
-        <div className={s.post__dateContainer}>
-          <div className={s.post__date}>{post.updatedAt && post.updatedAt.slice(0,9)} в {post.updatedAt && post.updatedAt.slice(11,16)}</div>
-          <div className={s.post__viewsContent}>
-            <img className={s.post__viewsIcon} src={views}></img>
-          <div className={s.post__views}>{post.views}</div>
+        <div className={s.dateContainer}>
+          <div className={s.dateContainer__date}>
+            {post.updatedAt && post.updatedAt.slice(0, 9)} в{" "}
+            {post.updatedAt && post.updatedAt.slice(11, 16)}
           </div>
-  
+          <div className={s.viewsContent}>
+            <img className={s.viewsContent__viewsIcon} src={views}></img>
+            <div className={s.viewsContent__views}>{post.views}</div>
+          </div>
         </div>
-        <p className={s.post__header}>{post.title}</p>
-        <p className={s.post_discription}>{post.description}</p>
+        <p className={s.headerContainer__header}>{post.title}</p>
+        <p className={s.headerContainer__discription}>{post.description}</p>
       </div>
-      <div className={s.post__content}>
-        <div className={s.post__textContainer}>
-          <p className={s.post__text}>{post.text !== undefined ? post.text : ""}</p>
+      <div className={s.content}>
+        <div className={s.textContainer}>
+          <p className={s.textContainer__text}>
+            {post.text !== undefined ? post.text : ""}
+          </p>
         </div>
-        <div className={s.post__commentsContainer}>
+        <div className={s.commentsContainer}>
           <Comments></Comments>
           {window.localStorage.getItem("token") && (
-            <div className={s.post_commentForm}>
-              <p className={s.post_commentHeaderForm}>Добавить комментарий</p>
+            <div className={s.commentForm}>
+              <p className={s.commentForm_commentHeaderForm}>
+                Добавить комментарий
+              </p>
               <textarea
                 value={text}
                 onChange={(e) => setText(e.target.value)}
                 type="text"
-                className={s.post_commentTextForm}
+                className={s.commentForm_commentTextForm}
               ></textarea>
-              <div className={s.post_btnContainer}>
+              <div className={s.btnContainer}>
                 <button
                   onClick={() => postComment(text, id)}
-                  className={s.post__btnForm}
+                  className={s.btnContainer__btnForm}
                 >
                   Отправить
                 </button>

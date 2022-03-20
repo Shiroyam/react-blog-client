@@ -11,7 +11,7 @@ import { closeProfile } from "../../redux/profile/action";
 import { closeSearch, openSearch } from "../../redux/search/action";
 import { openFormAuth } from "../../redux/authorization/action";
 import { Link } from "react-router-dom";
-import { valueInput } from "../../redux/search/action";
+import { valueSearch } from "../../redux/search/action";
 
 const Navbar = () => {
   const flag = useSelector((state) => state.search.flag);
@@ -21,16 +21,16 @@ const Navbar = () => {
     <>
       <div className={profile ? `${s.navbar}` : `${s.navbar} ${s.right}`}>
         {!profile ? (
-          <div className={s.navbar__content}>
-            {flag && <div className={s.navbar__header}>VASYA BLOG</div>}
-            <div className={s.menu__icon}>
+          <div className={s.content}>
+            {flag && <div className={s.content__header}>VASYA BLOG</div>}
+            <div className={s.icon}>
               {flag ? (
                 <>
                   {!profile && (
                     <img
                       onClick={() => dispatch(openSearch())}
                       src={searchIcon}
-                      className={s.menu__searchIcon}
+                      className={s.icon__searchIcon}
                     ></img>
                   )}
                   {localStorage.getItem("token") && (
@@ -38,29 +38,33 @@ const Navbar = () => {
                       <img
                         onClick={() => dispatch(closeProfile())}
                         src={createIcon}
-                        className={s.menu__createIcon}
+                        className={s.icon__createIcon}
                       ></img>
                     </Link>
                   )}
-                  {!localStorage.getItem("token") && (
+                  {!localStorage.getItem("token") ? (
                     <img
                       onClick={() => dispatch(openFormAuth())}
                       src={userIcon}
-                      className={s.menu__userIcon}
+                      className={s.icon__userIcon}
                     ></img>
+                  ) : (
+                    <Link to="/profile">
+                      <img src={userIcon} className={s.icon__userIcon}></img>
+                    </Link>
                   )}
                 </>
               ) : (
                 <>
                   <input
-                    className={s.menu__searchInput}
+                    className={s.searchInput}
                     placeholder="Поиск статьи по заголовку или тексту..."
                     type="text"
-                    onChange={(e) => dispatch(valueInput(e.target.value))}
+                    onChange={(e) => dispatch(valueSearch(e.target.value))}
                   ></input>
                   <img
                     onClick={() => dispatch(closeSearch())}
-                    className={s.menu__searchClose}
+                    className={s.searchClose}
                     src={closeSearchPng}
                   />
                 </>
@@ -68,16 +72,16 @@ const Navbar = () => {
             </div>
           </div>
         ) : (
-          <div className={s.navbar__content__open}>
-            {flag && <div className={s.navbar__header}>VASYA BLOG</div>}
-            <div className={s.menu__icon}>
+          <div className={s.contentOpen}>
+            {flag && <div className={s.contentOpen__header}>VASYA BLOG</div>}
+            <div className={s.icon}>
               {flag ? (
                 <>
                   {!profile && (
                     <img
                       onClick={() => dispatch(openSearch())}
                       src={searchIcon}
-                      className={s.menu__searchIcon}
+                      className={s.icon__searchIcon}
                     ></img>
                   )}
                   {localStorage.getItem("token") && (
@@ -85,7 +89,7 @@ const Navbar = () => {
                       <img
                         onClick={() => dispatch(closeProfile())}
                         src={createIcon}
-                        className={s.menu__createIcon}
+                        className={s.icon__createIcon}
                       ></img>
                     </Link>
                   )}
@@ -93,13 +97,13 @@ const Navbar = () => {
               ) : (
                 <>
                   <input
-                    className={s.menu__searchInput}
+                    className={s.searchInput}
                     placeholder="Поиск статьи по заголовку или тексту..."
                     type="text"
                   ></input>
                   <img
                     onClick={() => dispatch(closeSearch())}
-                    className={s.menu__searchClose}
+                    className={s.searchClose}
                     src={closeSearchPng}
                   />
                 </>

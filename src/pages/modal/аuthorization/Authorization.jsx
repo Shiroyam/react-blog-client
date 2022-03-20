@@ -12,16 +12,16 @@ import { openFormReg } from "../../../redux/registration/regAction";
 const Authorization = () => {
   const {
     register,
-    formState: { errors},
+    formState: { errors },
     handleSubmit,
   } = useForm({
-    mode:"onBlur"
+    mode: "onBlur",
   });
 
   const dispatch = useDispatch();
 
   const authPost = (data) => {
-    dispatch(authorizationPost(data.email, data.password));
+    dispatch(authorizationPost(data));
     dispatch(closeFormAuth());
   };
 
@@ -32,55 +32,58 @@ const Authorization = () => {
 
   return (
     <div className={s.authorization}>
-      <div className={s.authorization__modal}>
-        <div className={s.authorization__content}>
-          <div className={s.authorization__headerContent}>
-            <div className={s.authorization__header}>Авторизация</div>
+      <div className={s.modal}>
+        <div className={s.content}>
+          <div className={s.headerContent}>
+            <div className={s.headerContent__header}>Авторизация</div>
             <img
               onClick={() => dispatch(closeFormAuth())}
               src={close}
-              className={s.authorization__iconClose}
+              className={s.headerContent__iconClose}
             ></img>
           </div>
-          <form onSubmit={handleSubmit(authPost)}> 
-            <div className={s.authorization__inputName}>
-              <div className={s.authorization__header}>Email</div>
+          <form onSubmit={handleSubmit(authPost)}>
+            <div className={s.inputName}>
+              <div className={s.inputName__header}>Email</div>
               <input
                 {...register("email", {
                   required: "Поле обязательно!",
                   minLength: {
-                    value:6,
-                    message: "Нужно ввести минимум 6 символа!"
-                  }
+                    value: 6,
+                    message: "Нужно ввести минимум 6 символа!",
+                  },
                 })}
                 type="email"
-                className={s.authorization__input}
+                className={s.inputName__input}
               />
-              <div className={s.authorization__context}>{errors?.email && <p>{errors?.email?.message || "Error!"}</p>}</div>
+              <div className={s.inputName__context}>
+                {errors?.email && <p>{errors?.email?.message || "Error!"}</p>}
+              </div>
             </div>
-            <div className={s.authorization__inputPassword}>
-              <div className={s.authorization__header}>Пароль</div>
+            <div className={s.inputPassword}>
+              <div className={s.inputPassword__header}>Пароль</div>
               <input
-                 {...register("password", {
-                   required: true,
-                   minLength: {
-                     value:8,
-                     message: "Пароль должен содержать 8 символов!"
-                   }
-                 })}               
+                {...register("password", {
+                  required: true,
+                  minLength: {
+                    value: 8,
+                    message: "Пароль должен содержать 8 символов!",
+                  },
+                })}
                 type="password"
-                className={s.authorization__input}
+                className={s.inputPassword__input}
               />
-               <div className={s.authorization__context}>{errors?.password && <p>{errors?.password?.message || "Error!"}</p>}</div>
+              <div className={s.inputPassword__context}>
+                {errors?.password && (
+                  <p>{errors?.password?.message || "Error!"}</p>
+                )}
+              </div>
             </div>
-            <button
-              type="submit"
-              className={s.btn}
-            >
+            <button type="submit" className={s.btn}>
               Войти
             </button>
           </form>
-          <div onClick={openReg} className={s.authorization__link}>
+          <div onClick={openReg} className={s.link}>
             Хотите зарегистрироваться?
           </div>
         </div>

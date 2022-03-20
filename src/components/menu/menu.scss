@@ -15,7 +15,7 @@
     width: 500px;
     height: 100vh;
     background: #13315e;
-    .menuOpen__nav {
+    .nav {
       font-family: "Inter";
       font-style: normal;
       font-weight: 500;
@@ -26,7 +26,7 @@
       display: flex;
       flex-direction: column;
 
-      .menuOpen__main {
+      &__main {
         font-family: "Inter";
         font-style: normal;
         font-weight: 500;
@@ -41,7 +41,7 @@
           background: rgba(255, 255, 255, 0.06);
         }
       }
-      .menuOpen__myProfile {
+      &__myProfile {
         font-family: "Inter";
         font-style: normal;
         font-weight: 500;
@@ -58,7 +58,7 @@
           background: rgba(255, 255, 255, 0.06);
         }
       }
-      .menuOpen__createPage {
+      &__createPage {
         font-family: "Inter";
         font-style: normal;
         font-weight: 500;
@@ -75,7 +75,7 @@
           background: rgba(255, 255, 255, 0.06);
         }
       }
-      .menuOpen__exit {
+      &__exit {
         font-family: "Inter";
         font-style: normal;
         font-weight: 500;
@@ -96,10 +96,10 @@
         background: rgba(255, 255, 255, 0.06);
       }
     }
-    .menuOpen__header {
+    .header {
       padding-top: 26px;
       padding-left: 35px;
-      .menuOpen__name {
+      .header__name {
         font-family: "Inter";
         font-style: normal;
         font-weight: 800;
@@ -108,25 +108,25 @@
         color: #ffffff;
       }
     }
-    .menuOpen__closeMenu {
+    .closeMenu {
       position: fixed;
       bottom: 0;
       display: flex;
       align-items: flex-end;
-      .menuOpen__content {
+      .content {
         height: 50px;
         width: 500px;
         display: flex;
         padding-top: 15px;
         padding-left: 35px;
         background: #0a2246;
-        .menuOpen__closeIcon {
+        &__closeIcon {
           cursor: pointer;
           padding-top: 5px;
           width: 14px;
           height: 14px;
         }
-        .menuOpen__menu {
+        &__menu {
           padding-left: 11px;
           font-family: Inter;
           font-style: normal;
@@ -139,16 +139,16 @@
       }
     }
   }
-  &__content {
+  .content {
     display: block;
     padding-bottom: 26px;
-    .menu__icon {
+    &__icon {
       width: 20px;
       height: 16px;
       cursor: pointer;
       margin-left: 20px;
     }
-    .menu__header {
+    &__header {
       font-family: Inter;
       font-style: normal;
       font-weight: 600;

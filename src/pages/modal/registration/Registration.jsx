@@ -9,36 +9,34 @@ import {
 } from "../../../redux/registration/regAction";
 
 const Registration = () => {
+  const dispatch = useDispatch();
   const {
     register,
     formState: { errors },
     handleSubmit,
   } = useForm({
-    mode:"onBlur"
+    mode: "onBlur",
   });
 
-  const dispatch = useDispatch();
-  
-
   const postReg = (data) => {
-    dispatch(registrationPost(data.name, data.email, data.password))
-    window.location.reload()
+    dispatch(registrationPost(data));
+    dispatch(closeFormReg());
   };
 
   return (
     <div className={s.registration}>
-      <div className={s.registration__modal}>
-        <div className={s.registration__headerContent}>
-          <div className={s.registration__header}>Регистрация</div>
+      <div className={s.modal}>
+        <div className={s.headerContent}>
+          <div className={s.headerContent__header}>Регистрация</div>
           <img
             src={close}
             onClick={() => dispatch(closeFormReg())}
-            className={s.registration__iconClose}
+            className={s.headerContent__iconClose}
           ></img>
         </div>
         <form onSubmit={handleSubmit(postReg)}>
-          <div className={s.registration__inputName}>
-            <div className={s.registration__header}>Имя и фамилия</div>
+          <div className={s.inputName}>
+            <div className={s.inputName__header}>Имя и фамилия</div>
             <input
               {...register("name", {
                 required: "Поле обязательно!",
@@ -48,13 +46,15 @@ const Registration = () => {
                 },
               })}
               type="text"
-              className={s.registration__input}
+              className={s.inputName__input}
             />
-            <div className={s.registration__context}>{errors?.name && <p>{errors?.name?.message || "Error!"}</p>}</div>
+            <div className={s.inputName__context}>
+              {errors?.name && <p>{errors?.name?.message || "Error!"}</p>}
+            </div>
           </div>
 
-          <div className={s.registration__inputEmail}>
-            <div className={s.registration__header}>Email</div>
+          <div className={s.inputEmail}>
+            <div className={s.inputEmail__header}>Email</div>
             <input
               {...register("email", {
                 required: "Поле обязательно!",
@@ -64,13 +64,15 @@ const Registration = () => {
                 },
               })}
               type="email"
-              className={s.registration__input}
+              className={s.inputEmail__input}
             />
-            <div className={s.registration__context}>{errors?.email && <p>{errors?.email?.message || "Error!"}</p>}</div>
+            <div className={s.inputEmail__context}>
+              {errors?.email && <p>{errors?.email?.message || "Error!"}</p>}
+            </div>
           </div>
 
-          <div className={s.registration__inputPassword}>
-            <div className={s.registration__header}>Пароль</div>
+          <div className={s.inputPassword}>
+            <div className={s.inputPassword__header}>Пароль</div>
             <input
               {...register("password", {
                 required: true,
@@ -80,10 +82,13 @@ const Registration = () => {
                 },
               })}
               type="password"
-              className={s.registration__input}
+              className={s.inputPassword__input}
             />
-            <div className={s.registration__context}>{errors?.password && <p>{errors?.password?.message || "Error!"}</p>}
-          </div>
+            <div className={s.inputPassword__context}>
+              {errors?.password && (
+                <p>{errors?.password?.message || "Error!"}</p>
+              )}
+            </div>
           </div>
           <button type="submit" className={s.btn}>
             Зарегистрироваться

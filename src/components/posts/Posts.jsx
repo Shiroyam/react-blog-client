@@ -46,34 +46,36 @@ const Posts = () => {
               post._id == id ? `${s.article} ${s.border}` : `${s.article}`
             }
           >
-            <div className={s.article__content}>
-              <div className={s.article__textContent}>
-                <div className={s.article__header}>{post.title}</div>
-                <div className={s.article__discription}>{post.description}</div>
-                <div className={s.article__dateContainer}>
-                  <div className={s.article__date}>
+            <div className={s.content}>
+              <div className={s.textContent}>
+                <div className={s.textContent__header}>{post.title}</div>
+                <div className={s.textContent__discription}>
+                  {post.description}
+                </div>
+                <div className={s.textContent__dateContainer}>
+                  <div className={s.date}>
                     {post.updatedAt.slice(0, 9)} в{" "}
                     {post.updatedAt.slice(11, 16)}
                   </div>
-                  <img className={s.article__viewsIcon} src={views} />
-                  <div className={s.article__views}>{post.views}</div>
+                  <img className={s.viewsIcon} src={views} />
+                  <div className={s.views}>{post.views}</div>
                 </div>
                 {localStorage.getItem("id") == post.user._id && (
                   <>
                     {pathname == "/profile" && (
                       <>
-                        <div className={s.article__btn}>
+                        <div className={s.btn}>
                           <Link to={`/createpage/editing/${post._id}`}>
                             <button
                               onClick={() => ClickBtnEditing(post._id)}
-                              className={s.article__btnRedact}
+                              className={s.btn__btnRedact}
                             >
                               Редактировать
                             </button>
                           </Link>
                           <button
                             onClick={() => ClickBtnDelet(post._id)}
-                            className={s.article__btnDelet}
+                            className={s.btn__btnDelet}
                           >
                             Удалить
                           </button>
@@ -83,11 +85,11 @@ const Posts = () => {
                   </>
                 )}
               </div>
-              <div className={s.article__imgContent}>
+              <div className={s.imgContent}>
                 {post.photoUrl === "" ? (
                   <div />
                 ) : (
-                  <img className={s.article__img} src={post.photoUrl} />
+                  <img className={s.imgContent__img} src={post.photoUrl} />
                 )}
               </div>
             </div>

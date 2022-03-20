@@ -6,7 +6,7 @@ import Main from "./pages/main/Main.jsx";
 import Create from "./pages/create/Create.jsx";
 import Registration from "./pages/modal/registration/Registration.jsx";
 import Authorization from "./pages/modal/аuthorization/Authorization.jsx";
-import Post from "./pages/post/post.jsx";
+import Post from "./pages/post/Post.jsx";
 import { Routes, Route } from "react-router-dom";
 import { useSelector } from "react-redux";
 
@@ -17,8 +17,8 @@ function App() {
     <>
       {flagReg && <Registration />}
       {flagAuth && <Authorization />}
-      <Menu ></Menu>
-      <Navbar ></Navbar>
+      <Menu />
+      <Navbar />
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/post/:id" element={<Post />} />

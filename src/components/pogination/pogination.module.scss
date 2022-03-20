@@ -8,10 +8,10 @@
   padding-bottom: 10px;
   border-bottom: 1px solid #f9f9f9;
   border-left: 1px solid #f9f9f9;
-  &__btnContainer {
+  .btnContainer {
     flex-shrink: 0;
     padding-left: 29px;
-    .pogination__btnLeft {
+    &__btnLeft {
       cursor: pointer;
       width: 77.1px;
       height: 50px;
@@ -21,7 +21,7 @@
         opacity: 0.5;
       }
     }
-    .pogination__btnRight {
+    &__btnRight {
       cursor: pointer;
       width: 77.1px;
       height: 50px;
@@ -31,7 +31,7 @@
       }
     }
   }
-  &__numberPage {
+  .numberPage {
     padding-right: 7vw;
     font-family: "Inter";
     font-style: normal;

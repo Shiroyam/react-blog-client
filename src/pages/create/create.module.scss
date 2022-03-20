@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap");
 .create {
   width: 602px;
-  padding-top: 100px;
+  padding-top: 80px;
   padding-left: 220px;
   .header {
     &__context {
@@ -89,7 +89,7 @@
       padding-bottom: 7px;
     }
     &__form {
-      width: 442px;
+      width: 602px;
       height: 45px;
       resize: none;
 
@@ -107,31 +107,6 @@
       font-size: 16px;
       line-height: 28px;
       color: #000000;
-    }
-
-    &__button {
-      margin-top: 30px;
-      width: 145px;
-      height: 45px;
-      margin-left: 15px;
-      background: #6fcf97;
-      border-radius: 12px;
-
-      font-family: Inter;
-      font-style: normal;
-      font-weight: 600;
-      font-size: 16px;
-      line-height: 19px;
-      text-align: center;
-      color: #ffffff;
-      cursor: pointer;
-
-      &:hover {
-        opacity: 0.6;
-      }
-    }
-    &__icon {
-      padding-right: 9px;
     }
   }
   .textForm {

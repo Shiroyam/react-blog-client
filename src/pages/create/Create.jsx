@@ -1,6 +1,5 @@
 import React from "react";
 import s from "./create.module.scss";
-import loading from "./../../assets/png/GroupLoading.png";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { createPost, editingPost } from "../../redux/createPost/action";
@@ -22,12 +21,12 @@ const Create = () => {
   });
 
   const submitForm = (data) => {
-    if(id){
-      dispatch(editingPost(id, data))
-      window.location.reload()
+    if (id) {
+      dispatch(editingPost(id, data));
+      window.location.reload();
     } else {
       dispatch(createPost(data));
-      window.location.reload()
+      window.location.reload();
     }
   };
 
@@ -57,7 +56,9 @@ const Create = () => {
           >
             {id && postResp.title}
           </textarea>
-          <div className={s.header__context}>{errors?.title && <p>{errors?.title?.message || "Error!"}</p>}</div>
+          <div className={s.header__context}>
+            {errors?.title && <p>{errors?.title?.message || "Error!"}</p>}
+          </div>
         </div>
         <div className={s.description}>
           <div className={s.description__header}>Короткое описание</div>
@@ -77,7 +78,11 @@ const Create = () => {
           >
             {id && postResp.description}
           </textarea>
-          <div className={s.description__context}>{errors?.description && <p>{errors?.description?.message || "Error!"}</p>}</div>
+          <div className={s.description__context}>
+            {errors?.description && (
+              <p>{errors?.description?.message || "Error!"}</p>
+            )}
+          </div>
         </div>
         <div className={s.formLink}>
           <div className={s.formLink__container}>
@@ -95,13 +100,12 @@ const Create = () => {
             >
               {id && postResp.photoUrl}
             </textarea>
-            <div className={s.formLink__context}>{errors?.photoUrl && <p>{errors?.photoUrl?.message || "Error!"}</p>}</div>
+            <div className={s.formLink__context}>
+              {errors?.photoUrl && (
+                <p>{errors?.photoUrl?.message || "Error!"}</p>
+              )}
+            </div>
           </div>
-
-          <button className={s.formLink__button}>
-            <img src={loading} width={16} className={s.formLink__icon}></img>
-            Загрузить
-          </button>
         </div>
         <div className={s.textForm}>
           <div className={s.textForm__header}>Полное описание</div>
@@ -117,7 +121,9 @@ const Create = () => {
           >
             {id && postResp.text}
           </textarea>
-          <div className={s.textForm__context}>{errors?.text && <p>{errors?.text?.message || "Error!"}</p>}</div>
+          <div className={s.textForm__context}>
+            {errors?.text && <p>{errors?.text?.message || "Error!"}</p>}
+          </div>
         </div>
         {pathname == "/createPage" ? (
           <button type="submit" className={s.btnPost}>

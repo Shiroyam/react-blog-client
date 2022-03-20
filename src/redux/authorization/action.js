@@ -11,13 +11,13 @@ export const closeFormAuth = () => {
     }
 }
 
-export const authorizationPost = (email, password) => async (dispatch) =>{
+export const authorizationPost = (data) => async (dispatch) =>{
     
     try {
         const response = await instance
           .post("/auth/login", {
-            email: email,
-            password: password,
+            email: data.email,
+            password: data.password,
           })
           .then((response) => {
             const token = response.data.token;
@@ -31,7 +31,8 @@ export const authorizationPost = (email, password) => async (dispatch) =>{
               type:"POST_AUTH",
               paylaod: response
           })
+          alert("Вы успешно зашли!")
       } catch (error) {
-        alert(error);
+        alert("Введен неверный логин или пароль!");
       }
 }
