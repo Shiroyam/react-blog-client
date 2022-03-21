@@ -19,16 +19,22 @@
       line-height: 24px;
       color: #0a3465;
     }
+    .searchClose {
+      margin-left: 700px;
+      margin-top: 25px;
+      cursor: pointer;
+      position: relative;
+    }
     .icon {
       padding-right: 29px;
-      &__searchClose {
+      .searchClose {
         margin-left: 700px;
         margin-top: 25px;
         cursor: pointer;
         position: relative;
       }
 
-      &__searchInput {
+      .searchInput {
         position: absolute;
         outline: none;
         padding-left: 29px;
@@ -88,14 +94,14 @@
     }
     .icon {
       padding-right: 5vw;
-      &__searchClose {
+      .searchClose {
         margin-left: 700px;
         margin-top: 25px;
         cursor: pointer;
         position: relative;
       }
 
-      &__searchInput {
+      .searchInput {
         position: absolute;
         outline: none;
         padding-left: 29px;

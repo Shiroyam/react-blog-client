@@ -63,7 +63,7 @@ const Post = () => {
                 value={text}
                 onChange={(e) => setText(e.target.value)}
                 type="text"
-                className={s.commentForm_commentTextForm}
+                className={s.commentForm__commentTextForm}
               ></textarea>
               <div className={s.btnContainer}>
                 <button

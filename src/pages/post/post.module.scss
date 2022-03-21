@@ -136,8 +136,7 @@
       .commentForm {
         padding-top: 48px;
         width: 35vw;
-
-        &__commentHeaderForm {
+        &__commentTextForm {
           padding-bottom: 7px;
           font-family: "Inter";
           font-style: normal;
@@ -165,20 +164,15 @@
           line-height: 22px;
           color: #373737;
         }
-        &__btnForm {
-          cursor: pointer;
-          width: 130px;
-          height: 45px;
-          background: #ffdf36;
-          border-radius: 12px;
-          &:hover {
-            opacity: 0.8;
-          }
-        }
+
         .btnContainer {
           display: flex;
           justify-content: flex-end;
           &__btnForm {
+            width: 130px;
+            height: 45px;
+            background: #ffdf36;
+            border-radius: 12px;
             margin-top: 22px;
             margin-bottom: 20px;
             font-family: "Inter";
@@ -188,6 +182,9 @@
             line-height: 19px;
             text-align: center;
             color: #68572d;
+            &:hover {
+              opacity: 0.8;
+            }
           }
         }
       }
