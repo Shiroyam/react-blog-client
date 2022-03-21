@@ -1,5 +1,6 @@
 import React from "react";
 import s from "./create.module.scss";
+import loading from "./../../assets/png/GroupLoading.png";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { createPost, editingPost } from "../../redux/createPost/action";
@@ -85,25 +86,38 @@ const Create = () => {
           </div>
         </div>
         <div className={s.formLink}>
-          <div className={s.formLink__container}>
-            <div className={s.formLink__header}>Ссылка на изображение:</div>
-            <textarea
-              type="text"
-              className={s.formLink__form}
-              {...register("photoUrl", {
-                required: "Поле обязательно!",
-                minLength: {
-                  value: 6,
-                  message: "Нужно ввести минимум 6 символа!",
-                },
-              })}
-            >
-              {id && postResp.photoUrl}
-            </textarea>
-            <div className={s.formLink__context}>
-              {errors?.photoUrl && (
-                <p>{errors?.photoUrl?.message || "Error!"}</p>
-              )}
+          <div className={s.container}>
+            <div>
+              <div className={s.container__header}>Ссылка на изображение:</div>
+              <textarea
+                type="text"
+                placeholder="Вставьте URL..."
+                className={s.container__form}
+                {...register("photoUrl", {
+                  required: "Поле обязательно!",
+                  minLength: {
+                    value: 6,
+                    message: "Нужно ввести минимум 6 символа!",
+                  },
+                })}
+              >
+                {id && postResp.photoUrl}
+              </textarea>
+              <div className={s.container__context}>
+                {errors?.photoUrl && (
+                  <p>{errors?.photoUrl?.message || "Error!"}</p>
+                )}
+              </div>
+            </div>
+            <div className={s.btn}>
+              <button disabled className={s.btn__button}>
+                <img
+                  src={loading}
+                  width={16}
+                  className={s.formLink__icon}
+                ></img>
+                Загрузить
+              </button>
             </div>
           </div>
         </div>

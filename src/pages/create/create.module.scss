@@ -69,44 +69,67 @@
   }
 
   .formLink {
-    &__context {
-      font-family: Inter;
-      font-style: normal;
-      font-weight: 600;
-      font-size: 13px;
-      line-height: 100%;
-      color: red;
-    }
     margin-top: 30px;
-    display: flex;
-    &__header {
-      font-family: Inter;
-      font-style: normal;
-      font-weight: 600;
-      font-size: 16px;
-      line-height: 24px;
-      color: #0a3465;
-      padding-bottom: 7px;
-    }
-    &__form {
-      width: 602px;
-      height: 45px;
-      resize: none;
+    .container {
+      display: flex;
+      &__context {
+        font-family: Inter;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 13px;
+        line-height: 100%;
+        color: red;
+      }
+      &__header {
+        font-family: Inter;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 24px;
+        color: #0a3465;
+        padding-bottom: 7px;
+      }
+      &__form {
+        padding-top: 6px;
+        width: 450px;
+        height: 45px;
+        resize: none;
 
-      outline: none;
-      background: #ffffff;
-      border: 1px solid #eceef1;
-      box-sizing: border-box;
-      border-radius: 10px;
-      padding-left: 5px;
-      padding-right: 5px;
+        outline: none;
+        background: #ffffff;
+        border: 1px solid #eceef1;
+        box-sizing: border-box;
+        border-radius: 10px;
+        padding-left: 5px;
+        padding-right: 5px;
 
-      font-family: Inter;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 16px;
-      line-height: 28px;
-      color: #000000;
+        font-family: Inter;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 28px;
+        color: #000000;
+      }
+      .btn {
+        &__button {
+          width: 145px;
+          height: 45px;
+          margin-top: 31px;
+          margin-left: 15px;
+          background: #6fcf97;
+          border-radius: 12px;
+          opacity: 0.3;
+
+          font-family: Inter;
+          font-style: normal;
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 19px;
+          text-align: center;
+          color: #ffffff;
+          cursor: pointer;
+        }
+      }
     }
   }
   .textForm {

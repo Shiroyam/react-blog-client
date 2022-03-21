@@ -44,7 +44,7 @@ const Comments = () => {
                   {comment.createdAt}
                 </div>
               </div>
-              <div className={s.coment__text}>{comment.text}</div>
+              <div className={s.text}>{comment.text}</div>
             </div>
           ))}
         </div>
