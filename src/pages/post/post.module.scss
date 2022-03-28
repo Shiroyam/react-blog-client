@@ -1,0 +1,193 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100&family=Inter:wght@400;500;600;800&family=Nunito:wght@800&display=swap");
+.post {
+  .headerContainer {
+    width: 50vw;
+    height: 40vh;
+    padding-top: 30px;
+    padding-bottom: 50px;
+    padding-left: 72px;
+    background: #dbdbdb;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+    .dateContainer {
+      padding-top: 9px;
+      position: relative;
+      z-index: 1;
+      font-family: "IBM Plex Sans";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 18px;
+      letter-spacing: 0.01em;
+      text-transform: uppercase;
+      color: #c1c1c1;
+      display: flex;
+      .viewsContent {
+        padding-left: 21px;
+        display: flex;
+        &__viewsIcon {
+          margin-top: 3px;
+          padding-right: 2px;
+          width: 16px;
+          height: 12px;
+        }
+      }
+    }
+    &__header {
+      position: relative;
+      z-index: 1;
+      width: 576px;
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 800;
+      font-size: 50px;
+      line-height: 52px;
+      color: #ffffff;
+    }
+    &__discription {
+      position: relative;
+      z-index: 1;
+      width: 590px;
+      padding-top: 14px;
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 24px;
+      color: rgba(255, 255, 255, 0.7);
+    }
+  }
+  .content {
+    margin-left: 72px;
+    .textContainer {
+      margin-top: 37px;
+      &__text {
+        width: 35vw;
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 26px;
+        color: #000000;
+      }
+    }
+    .commentsContainer {
+      padding-top: 60px;
+      padding-right: 470px;
+
+      .headerComments {
+        &__header {
+          font-family: "Inter";
+          font-style: normal;
+          font-weight: 600;
+          font-size: 24px;
+          line-height: 24px;
+          color: #0a3465;
+        }
+      }
+      .coment {
+        margin-top: 37px;
+        padding-top: 5px;
+        width: 35vw;
+        height: 80px;
+        .headerComment {
+          display: flex;
+          justify-content: space-between;
+          &__header {
+            font-family: "Inter";
+            font-style: normal;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 18px;
+            color: #373737;
+          }
+          &__date {
+            font-family: "IBM Plex Sans";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 16px;
+            letter-spacing: 0.01em;
+            text-transform: uppercase;
+            color: #c1c1c1;
+          }
+        }
+        .text {
+          font-family: "Inter";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 22px;
+          color: #373737;
+          border-bottom: 1px solid #f1f1f1;
+          padding-top: 16px;
+          padding-bottom: 20px;
+        }
+      }
+      .commentForm {
+        padding-top: 48px;
+        width: 35vw;
+        &__commentTextForm {
+          padding-bottom: 7px;
+          font-family: "Inter";
+          font-style: normal;
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 24px;
+          color: #0a3465;
+        }
+        &__commentTextForm {
+          width: 35vw;
+          height: 90px;
+          background: #ffffff;
+          border: 1px solid #eceef1;
+          border-radius: 10px;
+          padding-top: 2px;
+          padding-left: 5px;
+          padding-right: 5px;
+          outline: none;
+          resize: none;
+
+          font-family: "Inter";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 22px;
+          color: #373737;
+        }
+
+        .btnContainer {
+          display: flex;
+          justify-content: flex-end;
+          &__btnForm {
+            width: 130px;
+            height: 45px;
+            background: #ffdf36;
+            border-radius: 12px;
+            margin-top: 22px;
+            margin-bottom: 20px;
+            font-family: "Inter";
+            font-style: normal;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 19px;
+            text-align: center;
+            color: #68572d;
+            &:hover {
+              opacity: 0.8;
+            }
+          }
+        }
+      }
+    }
+  }
+}

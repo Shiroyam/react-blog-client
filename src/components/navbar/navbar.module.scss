@@ -1,0 +1,146 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=Nunito:wght@800&display=swap");
+.right {
+  float: right;
+}
+
+.navbar {
+  width: 45.34vw;
+  .contentOpen {
+    width: 93vw;
+    display: flex;
+    justify-content: space-between;
+    &__header {
+      padding-top: 21px;
+      padding-left: 29px;
+      font-family: Inter;
+      font-style: normal;
+      font-weight: 800;
+      font-size: 16px;
+      line-height: 24px;
+      color: #0a3465;
+    }
+    .searchClose {
+      margin-left: 700px;
+      margin-top: 25px;
+      cursor: pointer;
+      position: relative;
+    }
+    .icon {
+      padding-right: 29px;
+      .searchClose {
+        margin-left: 700px;
+        margin-top: 25px;
+        cursor: pointer;
+        position: relative;
+      }
+
+      .searchInput {
+        position: absolute;
+        outline: none;
+        padding-left: 29px;
+        padding-right: 100px;
+        background: #f9fafd;
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        color: #798fa8;
+
+        width: 650px;
+        height: 67px;
+      }
+      &__searchIcon {
+        padding-top: 21px;
+        cursor: pointer;
+        margin-right: 26px;
+        &:hover {
+          opacity: 0.5;
+        }
+      }
+      &__createIcon {
+        padding-top: 21px;
+        margin-right: 26px;
+        cursor: pointer;
+        &:hover {
+          opacity: 0.5;
+        }
+      }
+      &__userIcon {
+        padding-top: 21px;
+        cursor: pointer;
+        &:hover {
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+
+  .content {
+    border-bottom: 1px solid #f9f9f9;
+    border-left: 1px solid #f9f9f9;
+    height: 67px;
+    display: flex;
+    justify-content: space-between;
+    &__header {
+      padding-top: 21px;
+      padding-left: 29px;
+      font-family: Inter;
+      font-style: normal;
+      font-weight: 800;
+      font-size: 16px;
+      line-height: 24px;
+      color: #0a3465;
+    }
+    .icon {
+      padding-right: 5vw;
+      .searchClose {
+        margin-left: 700px;
+        margin-top: 25px;
+        cursor: pointer;
+        position: relative;
+      }
+
+      .searchInput {
+        position: absolute;
+        outline: none;
+        padding-left: 29px;
+        padding-right: 100px;
+        background: #f9fafd;
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        color: #798fa8;
+
+        width: 33.5vw;
+        height: 67px;
+      }
+      &__searchIcon {
+        padding-top: 21px;
+        cursor: pointer;
+        margin-right: 26px;
+        &:hover {
+          opacity: 0.5;
+        }
+      }
+      &__createIcon {
+        padding-top: 21px;
+        margin-right: 26px;
+        cursor: pointer;
+        &:hover {
+          opacity: 0.5;
+        }
+      }
+      &__userIcon {
+        padding-top: 21px;
+        margin-right: 26px;
+        cursor: pointer;
+        &:hover {
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+}
